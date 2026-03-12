@@ -10,7 +10,7 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Vocabulary
 
 - [ ] **VOCAB-01**: User can learn vocabulary through flashcards showing Korean, English, and example sentences
-- [ ] **VOCAB-02**: Flashcard review uses FSRS spaced repetition with confidence ratings (Again/Hard/Good/Easy)
+- [x] **VOCAB-02**: Flashcard review uses FSRS spaced repetition with confidence ratings (Again/Hard/Good/Easy)
 - [ ] **VOCAB-03**: User can practice vocabulary through cloze (fill-in-the-blank) exercises in sentence context
 - [x] **VOCAB-04**: Vocabulary items are tagged with TOPIK-I level for benchmark alignment
 - [x] **VOCAB-05**: Each vocabulary item includes 2-3 example sentences with audio
@@ -96,7 +96,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PROG-02 | Phase 2 | Complete |
 | PROG-05 | Phase 2 | Complete |
 | VOCAB-01 | Phase 3 | Pending |
-| VOCAB-02 | Phase 3 | Pending |
+| VOCAB-02 | Phase 3 | Complete |
 | VOCAB-03 | Phase 3 | Pending |
 | VOCAB-04 | Phase 3 | Complete |
 | VOCAB-05 | Phase 3 | Complete |

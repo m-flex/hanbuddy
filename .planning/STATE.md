@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 03-practice-03-01-PLAN.md
-last_updated: "2026-03-12T14:52:57.720Z"
+stopped_at: Completed 03-practice-02-PLAN.md
+last_updated: "2026-03-12T14:53:47.547Z"
 last_activity: 2026-03-12 — Roadmap created, phases derived from requirements
 progress:
   total_phases: 4
@@ -57,6 +57,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 02-lessons P04 | 5min | 3 tasks | 7 files |
 | Phase 02-lessons P03 | 5min | 3 tasks | 11 files |
 | Phase 03-practice P01 | 12min | 2 tasks | 6 files |
+| Phase 03-practice P02 | 15min | 2 tasks | 11 files |
 
 ## Accumulated Context
 
@@ -85,6 +86,8 @@ Recent decisions affecting current work:
 - [Phase 02-03]: LessonDetailPage calls setActiveLesson() matching actual store API — plan spec had setLastActiveLesson discrepancy
 - [Phase 03-practice]: TopikLevel is a required field on VocabItem (not optional) — all 20 current items are beginner TOPIK I-II content
 - [Phase 03-practice]: examples is required on VocabItem (changed from optional) — ensures all SRS cards have study material at compile time
+- [Phase 03-practice]: Grade cast used for ts-fsrs scheduling[rating as Grade] — IPreview keyed by Grade excludes Rating.Manual; recordReview accepts Rating and casts for type safety
+- [Phase 03-practice]: useSrsSession derives session queue on every call — not persisted — to avoid stale-queue bugs after clock changes or missed reviews
 
 ### Pending Todos
 
@@ -97,6 +100,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T14:52:57.717Z
-Stopped at: Completed 03-practice-03-01-PLAN.md
+Last session: 2026-03-12T14:53:47.544Z
+Stopped at: Completed 03-practice-02-PLAN.md
 Resume file: None
