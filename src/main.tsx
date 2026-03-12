@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import RootLayout from './components/layout/RootLayout';
-import LessonListPage from './pages/LessonListPage';
+import CurriculumMapPage from './pages/CurriculumMapPage';
 import LessonDetailPage from './pages/LessonDetailPage';
 import TopicListPage from './pages/TopicListPage';
 import TopicDetailPage from './pages/TopicDetailPage';
@@ -14,13 +14,15 @@ import ClozeExercisePage from './pages/ClozeExercisePage';
 import ListeningExercisePage from './pages/ListeningExercisePage';
 import SentenceBuildPage from './pages/SentenceBuildPage';
 import DialogueLessonPage from './pages/DialogueLessonPage';
+import ReadingListPage from './pages/ReadingListPage';
+import ReadingPassagePage from './pages/ReadingPassagePage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <RootLayout />,
     children: [
-      { index: true, element: <LessonListPage /> },
+      { index: true, element: <CurriculumMapPage /> },
       { path: 'lessons/:lessonId', element: <LessonDetailPage /> },
       { path: 'topics', element: <TopicListPage /> },
       { path: 'topics/:topicId', element: <TopicDetailPage /> },
@@ -31,6 +33,8 @@ const router = createBrowserRouter([
       { path: 'practice/listening', element: <ListeningExercisePage /> },
       { path: 'practice/build', element: <SentenceBuildPage /> },
       { path: 'practice/dialogues', element: <DialogueLessonPage /> },
+      { path: 'read', element: <ReadingListPage /> },
+      { path: 'read/:passageId', element: <ReadingPassagePage /> },
     ],
   },
 ]);
