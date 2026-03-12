@@ -3,19 +3,14 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { loadProgress, saveProgress, checkAchievements } from './store/progress'
 import Navbar from './components/Navbar'
+import AchievementToast from './components/AchievementToast'
 import Dashboard from './pages/Dashboard'
-import StageMap from './pages/StageMap'
-import Learn from './pages/Learn'
-import Quiz from './pages/Quiz'
+import CourseMap from './pages/CourseMap'
+import UnitDetail from './pages/UnitDetail'
+import Lesson from './pages/Lesson'
 import Review from './pages/Review'
 import Stats from './pages/Stats'
 import Settings from './pages/Settings'
-import TimedChallenge from './pages/TimedChallenge'
-import SentencePractice from './pages/SentencePractice'
-import ListeningDrill from './pages/ListeningDrill'
-import WeakLetterDrill from './pages/WeakLetterDrill'
-import DailyChallenge from './pages/DailyChallenge'
-import AchievementToast from './components/AchievementToast'
 
 export default function App() {
   const [progress, setProgress] = useState(() => loadProgress())
@@ -47,17 +42,12 @@ export default function App() {
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Dashboard progress={progress} />} />
-            <Route path="/stages" element={<StageMap progress={progress} />} />
-            <Route path="/learn/:stageId/:lessonIdx" element={<Learn progress={progress} updateProgress={updateProgress} />} />
-            <Route path="/quiz/:stageId/:lessonIdx" element={<Quiz progress={progress} updateProgress={updateProgress} />} />
+            <Route path="/course" element={<CourseMap progress={progress} />} />
+            <Route path="/unit/:unitId" element={<UnitDetail progress={progress} />} />
+            <Route path="/lesson/:unitId/:lessonIdx" element={<Lesson progress={progress} updateProgress={updateProgress} />} />
             <Route path="/review" element={<Review progress={progress} updateProgress={updateProgress} />} />
             <Route path="/stats" element={<Stats progress={progress} />} />
             <Route path="/settings" element={<Settings progress={progress} updateProgress={updateProgress} />} />
-            <Route path="/challenge" element={<TimedChallenge progress={progress} updateProgress={updateProgress} />} />
-            <Route path="/sentences" element={<SentencePractice progress={progress} updateProgress={updateProgress} />} />
-            <Route path="/listening" element={<ListeningDrill progress={progress} updateProgress={updateProgress} />} />
-            <Route path="/weak-drill" element={<WeakLetterDrill progress={progress} updateProgress={updateProgress} />} />
-            <Route path="/daily" element={<DailyChallenge progress={progress} updateProgress={updateProgress} />} />
           </Routes>
         </AnimatePresence>
       </main>

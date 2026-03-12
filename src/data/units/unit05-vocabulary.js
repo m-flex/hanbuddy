@@ -1,0 +1,532 @@
+// Unit 5: People, Places & Things
+// 5 lessons building essential everyday vocabulary
+
+const lessons = [
+  // ─── Lesson 5.1: People & Family ─────────────────────────
+  {
+    id: 'u5-l1',
+    title: 'People & Family',
+    subtitle: 'The people in your life',
+    estimatedMinutes: 10,
+    teach: [
+      {
+        type: 'explanation',
+        title: 'People words',
+        content: 'Korean has specific words for relationships that carry social meaning. Unlike English, how you refer to someone tells others about your age, closeness, and social position relative to them.',
+      },
+      {
+        type: 'breakdown',
+        title: 'Essential People Words',
+        items: [
+          { char: '사람', roman: 'saram', sound: 'Person', mnemonic: 'The most basic word for a person — used everywhere' },
+          { char: '친구', roman: 'chingu', sound: 'Friend', mnemonic: 'ONLY for same-age friends! Someone older or younger is NOT your 친구' },
+          { char: '가족', roman: 'gajok', sound: 'Family', mnemonic: 'Family is central in Korean culture' },
+          { char: '엄마', roman: 'eomma', sound: 'Mom (informal)', mnemonic: 'The warm, casual way — like "mommy/mom"' },
+          { char: '아빠', roman: 'appa', sound: 'Dad (informal)', mnemonic: 'Casual and affectionate — like "daddy/dad"' },
+          { char: '선생님', roman: 'seonsaengnim', sound: 'Teacher', mnemonic: '님 is an honorific suffix — shows high respect' },
+          { char: '학생', roman: 'haksaeng', sound: 'Student', mnemonic: '학 = study/learn, 생 = person who does it' },
+        ],
+      },
+      {
+        type: 'cultural-note',
+        title: 'Titles over names',
+        content: 'In Korea, you rarely call someone by their name alone. Titles matter more: 선생님 (teacher), 사장님 (boss), 언니/오빠/누나/형 (older sibling terms used for non-siblings too). Using just a name without a title can sound rude, especially with someone older.',
+      },
+      {
+        type: 'cultural-note',
+        title: '친구 doesn\'t mean what you think',
+        content: 'In English, "friend" can be anyone you\'re close with. In Korean, 친구 strictly means someone born in the SAME year as you. A close older person is 언니/오빠/누나/형, and a younger person is 동생. Age defines the word, not closeness!',
+      },
+    ],
+    vocabulary: [
+      { korean: '사람', roman: 'saram', english: 'Person', audio: true, example: { kr: '한국 사람이에요.', en: 'I\'m a Korean person.' } },
+      { korean: '친구', roman: 'chingu', english: 'Friend (same age)', audio: true, example: { kr: '제 친구예요.', en: 'This is my friend.' } },
+      { korean: '가족', roman: 'gajok', english: 'Family', audio: true, example: { kr: '가족이 몇 명이에요?', en: 'How many people are in your family?' } },
+      { korean: '엄마', roman: 'eomma', english: 'Mom', audio: true, example: { kr: '엄마, 배고파요.', en: 'Mom, I\'m hungry.' } },
+      { korean: '아빠', roman: 'appa', english: 'Dad', audio: true, example: { kr: '아빠가 회사에 가요.', en: 'Dad goes to the office.' } },
+      { korean: '선생님', roman: 'seonsaengnim', english: 'Teacher', audio: true, example: { kr: '선생님, 감사합니다.', en: 'Teacher, thank you.' } },
+      { korean: '학생', roman: 'haksaeng', english: 'Student', audio: true, example: { kr: '저는 학생이에요.', en: 'I am a student.' } },
+    ],
+    exercises: [
+      {
+        type: 'multiple-choice',
+        prompt: '친구 in Korean strictly means a friend who is...',
+        options: ['Very close to you', 'Born in the same year as you', 'In the same class', 'Any age'],
+        correct: 1,
+      },
+      {
+        type: 'matching',
+        prompt: 'Match the Korean word to its meaning',
+        pairs: [
+          { left: '사람', right: 'Person' },
+          { left: '가족', right: 'Family' },
+          { left: '선생님', right: 'Teacher' },
+          { left: '학생', right: 'Student' },
+        ],
+      },
+      {
+        type: 'multiple-choice',
+        prompt: 'In Korean culture, what is more important than using someone\'s name?',
+        options: ['Speaking loudly', 'Using their title', 'Making eye contact', 'Bowing first'],
+        correct: 1,
+      },
+      {
+        type: 'listening',
+        audio: '선생님',
+        prompt: 'What did you hear?',
+        options: ['학생 (student)', '선생님 (teacher)', '친구 (friend)', '사람 (person)'],
+        correct: 1,
+      },
+      {
+        type: 'fill-blank',
+        prompt: '저는 ___이에요. (I am a student.)',
+        options: ['선생님', '학생', '친구', '사람'],
+        correct: 1,
+        hint: 'Which word means "student"?',
+      },
+      {
+        type: 'conversation',
+        prompt: 'You want to introduce your same-age friend to someone. You say: "제 ___예요."',
+        options: ['선생님', '학생', '친구', '사람'],
+        correct: 2,
+      },
+    ],
+    quizQuestionCount: 5,
+    passThreshold: 0.7,
+  },
+
+  // ─── Lesson 5.2: Places ──────────────────────────────────
+  {
+    id: 'u5-l2',
+    title: 'Places',
+    subtitle: 'Where things happen',
+    estimatedMinutes: 10,
+    teach: [
+      {
+        type: 'explanation',
+        title: 'Everyday places',
+        content: 'Knowing place words lets you talk about where you\'re going, where you are, and where things are. These are some of the most commonly used nouns in Korean.',
+      },
+      {
+        type: 'breakdown',
+        title: 'Essential Places',
+        items: [
+          { char: '집', roman: 'jip', sound: 'Home/House', mnemonic: 'Short and sweet — one of the most common words' },
+          { char: '학교', roman: 'hakgyo', sound: 'School', mnemonic: '학 = study, 교 = teaching place' },
+          { char: '회사', roman: 'hoesa', sound: 'Office/Company', mnemonic: '회 = group/meeting, 사 = company' },
+          { char: '식당', roman: 'sikdang', sound: 'Restaurant', mnemonic: '식 = food, 당 = hall' },
+          { char: '병원', roman: 'byeongwon', sound: 'Hospital', mnemonic: '병 = illness, 원 = institution' },
+          { char: '가게', roman: 'gage', sound: 'Shop/Store', mnemonic: 'A general small shop or store' },
+          { char: '카페', roman: 'kape', sound: 'Cafe', mnemonic: 'Loanword from English — Korea\'s cafe culture is huge!' },
+        ],
+      },
+      {
+        type: 'pattern',
+        title: 'Where are you going? 에 vs 에서',
+        content: 'Two important particles for places:',
+        examples: [
+          { kr: '집에 가요.', en: 'I\'m going home. (에 = to/at — direction or location)' },
+          { kr: '학교에 있어요.', en: 'I\'m at school. (에 = at — static location)' },
+          { kr: '회사에서 일해요.', en: 'I work at the office. (에서 = at — where action happens)' },
+          { kr: '식당에서 먹어요.', en: 'I eat at the restaurant. (에서 = at — where action happens)' },
+        ],
+      },
+      {
+        type: 'explanation',
+        title: '에 vs 에서 — the key difference',
+        content: 'Use 에 for: going TO a place (direction) or just BEING somewhere (existence with 있다/없다).\nUse 에서 for: DOING something at a place (actions). Think: "에 = location exists" vs "에서 = action happens here."',
+      },
+    ],
+    vocabulary: [
+      { korean: '집', roman: 'jip', english: 'Home/House', audio: true, example: { kr: '집에 가요.', en: 'I\'m going home.' } },
+      { korean: '학교', roman: 'hakgyo', english: 'School', audio: true, example: { kr: '학교에서 공부해요.', en: 'I study at school.' } },
+      { korean: '회사', roman: 'hoesa', english: 'Office/Company', audio: true, example: { kr: '회사에서 일해요.', en: 'I work at the office.' } },
+      { korean: '식당', roman: 'sikdang', english: 'Restaurant', audio: true, example: { kr: '식당에서 먹어요.', en: 'I eat at the restaurant.' } },
+      { korean: '병원', roman: 'byeongwon', english: 'Hospital', audio: true, example: { kr: '병원에 가요.', en: 'I\'m going to the hospital.' } },
+      { korean: '가게', roman: 'gage', english: 'Shop/Store', audio: true, example: { kr: '가게에서 사요.', en: 'I buy it at the shop.' } },
+      { korean: '카페', roman: 'kape', english: 'Cafe', audio: true, example: { kr: '카페에서 커피를 마셔요.', en: 'I drink coffee at the cafe.' } },
+    ],
+    exercises: [
+      {
+        type: 'multiple-choice',
+        prompt: 'Which particle do you use for GOING to a place?',
+        options: ['에서', '에', '를', '은'],
+        correct: 1,
+      },
+      {
+        type: 'fill-blank',
+        prompt: '학교___ 공부해요. (I study at school.)',
+        options: ['에', '에서', '를', '은'],
+        correct: 1,
+        hint: 'Studying is an ACTION happening at a place.',
+      },
+      {
+        type: 'fill-blank',
+        prompt: '집___ 가요. (I\'m going home.)',
+        options: ['에서', '에', '를', '은'],
+        correct: 1,
+        hint: 'Going TO a place uses which particle?',
+      },
+      {
+        type: 'matching',
+        prompt: 'Match the place to its meaning',
+        pairs: [
+          { left: '집', right: 'Home' },
+          { left: '식당', right: 'Restaurant' },
+          { left: '병원', right: 'Hospital' },
+          { left: '회사', right: 'Office' },
+        ],
+      },
+      {
+        type: 'listening',
+        audio: '식당',
+        prompt: 'What place did you hear?',
+        options: ['학교 (school)', '식당 (restaurant)', '병원 (hospital)', '회사 (office)'],
+        correct: 1,
+      },
+      {
+        type: 'sentence-builder',
+        prompt: 'Build: "I eat at the restaurant."',
+        tiles: ['식당에서', '먹어요'],
+        correct: ['식당에서', '먹어요'],
+        english: 'I eat at the restaurant.',
+      },
+      {
+        type: 'multiple-choice',
+        prompt: '카페 is a loanword. Korea is famous for its...',
+        options: ['Hospital culture', 'Cafe culture', 'School culture', 'Office culture'],
+        correct: 1,
+      },
+    ],
+    quizQuestionCount: 6,
+    passThreshold: 0.7,
+  },
+
+  // ─── Lesson 5.3: Food & Drink ────────────────────────────
+  {
+    id: 'u5-l3',
+    title: 'Food & Drink',
+    subtitle: 'Essential food vocabulary',
+    estimatedMinutes: 10,
+    teach: [
+      {
+        type: 'explanation',
+        title: 'Food is life in Korea',
+        content: 'Food is central to Korean culture. "Have you eaten?" (밥 먹었어요?) is a common greeting — like asking "How are you?" Knowing food words is essential for daily life.',
+      },
+      {
+        type: 'breakdown',
+        title: 'Essential Food & Drink Words',
+        items: [
+          { char: '밥', roman: 'bap', sound: 'Rice / Meal', mnemonic: 'Means both "rice" AND "meal" — shows how central rice is!' },
+          { char: '물', roman: 'mul', sound: 'Water', mnemonic: 'Free water (물) comes with every Korean meal' },
+          { char: '고기', roman: 'gogi', sound: 'Meat', mnemonic: 'General word for meat — 소고기 (beef), 돼지고기 (pork), 닭고기 (chicken)' },
+          { char: '커피', roman: 'keopi', sound: 'Coffee', mnemonic: 'Loanword — Korea is one of the biggest coffee-consuming countries!' },
+          { char: '빵', roman: 'ppang', sound: 'Bread', mnemonic: 'From Portuguese "pão" — came to Korea through Japan!' },
+          { char: '과일', roman: 'gwail', sound: 'Fruit', mnemonic: 'General word for all fruits' },
+          { char: '음식', roman: 'eumsik', sound: 'Food', mnemonic: 'The general/formal word for food' },
+          { char: '반찬', roman: 'banchan', sound: 'Side dishes', mnemonic: 'The small dishes served with every Korean meal — always free refills!' },
+        ],
+      },
+      {
+        type: 'pattern',
+        title: '___ 주세요 = "___, please"',
+        content: 'Remember 주세요 from Unit 2? Now you can order food!',
+        examples: [
+          { kr: '물 주세요.', en: 'Water, please.' },
+          { kr: '밥 주세요.', en: 'Rice, please.' },
+          { kr: '커피 주세요.', en: 'Coffee, please.' },
+          { kr: '반찬 더 주세요.', en: 'More side dishes, please.' },
+        ],
+      },
+      {
+        type: 'cultural-note',
+        title: '빵 came from Portuguese!',
+        content: 'The Korean word 빵 (bread) comes from the Portuguese word "pão". Portuguese missionaries brought bread to Japan, where it became パン (pan), and then traveled to Korea as 빵. Many food words have surprising origins!',
+      },
+    ],
+    vocabulary: [
+      { korean: '밥', roman: 'bap', english: 'Rice / Meal', audio: true, example: { kr: '밥 먹었어요?', en: 'Have you eaten? (lit: Did you eat rice?)' } },
+      { korean: '물', roman: 'mul', english: 'Water', audio: true, example: { kr: '물 주세요.', en: 'Water, please.' } },
+      { korean: '고기', roman: 'gogi', english: 'Meat', audio: true, example: { kr: '고기 좋아해요.', en: 'I like meat.' } },
+      { korean: '커피', roman: 'keopi', english: 'Coffee', audio: true, example: { kr: '커피 한 잔 주세요.', en: 'One cup of coffee, please.' } },
+      { korean: '빵', roman: 'ppang', english: 'Bread', audio: true, example: { kr: '빵을 먹어요.', en: 'I eat bread.' } },
+      { korean: '과일', roman: 'gwail', english: 'Fruit', audio: true, example: { kr: '과일 좋아해요?', en: 'Do you like fruit?' } },
+      { korean: '음식', roman: 'eumsik', english: 'Food', audio: true, example: { kr: '한국 음식 좋아해요.', en: 'I like Korean food.' } },
+      { korean: '반찬', roman: 'banchan', english: 'Side dishes', audio: true, example: { kr: '반찬 더 주세요.', en: 'More side dishes, please.' } },
+    ],
+    exercises: [
+      {
+        type: 'multiple-choice',
+        prompt: '밥 means both "rice" and...',
+        options: ['Water', 'Meal', 'Side dish', 'Bread'],
+        correct: 1,
+      },
+      {
+        type: 'sentence-builder',
+        prompt: 'Build: "Water, please."',
+        tiles: ['물', '주세요'],
+        correct: ['물', '주세요'],
+        english: 'Water, please.',
+      },
+      {
+        type: 'multiple-choice',
+        prompt: 'Where did the Korean word 빵 (bread) originally come from?',
+        options: ['English', 'Chinese', 'Portuguese', 'Japanese'],
+        correct: 2,
+      },
+      {
+        type: 'matching',
+        prompt: 'Match the food word to its meaning',
+        pairs: [
+          { left: '밥', right: 'Rice/Meal' },
+          { left: '고기', right: 'Meat' },
+          { left: '과일', right: 'Fruit' },
+          { left: '반찬', right: 'Side dishes' },
+        ],
+      },
+      {
+        type: 'listening',
+        audio: '커피',
+        prompt: 'What did you hear?',
+        options: ['물 (water)', '커피 (coffee)', '빵 (bread)', '밥 (rice)'],
+        correct: 1,
+      },
+      {
+        type: 'conversation',
+        prompt: 'You want more side dishes at a restaurant. You say:',
+        options: ['물 주세요', '밥 주세요', '반찬 더 주세요', '커피 주세요'],
+        correct: 2,
+      },
+      {
+        type: 'multiple-choice',
+        prompt: '"밥 먹었어요?" literally means "Did you eat rice?" but it\'s actually used as...',
+        options: ['An insult', 'A greeting (like "How are you?")', 'An invitation to dinner', 'A cooking question'],
+        correct: 1,
+      },
+    ],
+    quizQuestionCount: 6,
+    passThreshold: 0.7,
+  },
+
+  // ─── Lesson 5.4: Time Words ──────────────────────────────
+  {
+    id: 'u5-l4',
+    title: 'Time Words',
+    subtitle: 'When things happen',
+    estimatedMinutes: 8,
+    teach: [
+      {
+        type: 'explanation',
+        title: 'Talking about time',
+        content: 'Time words in Korean are straightforward. Some words pull double duty — 아침 means both "morning" AND "breakfast", because the meal defines the time of day.',
+      },
+      {
+        type: 'breakdown',
+        title: 'Essential Time Words',
+        items: [
+          { char: '오늘', roman: 'oneul', sound: 'Today', mnemonic: 'One of the most frequently used time words' },
+          { char: '내일', roman: 'naeil', sound: 'Tomorrow', mnemonic: '내 can mean "next/coming"' },
+          { char: '어제', roman: 'eoje', sound: 'Yesterday', mnemonic: 'Often used with past tense verbs' },
+          { char: '지금', roman: 'jigeum', sound: 'Now', mnemonic: 'Right this moment' },
+          { char: '아침', roman: 'achim', sound: 'Morning / Breakfast', mnemonic: 'Both the time AND the meal!' },
+          { char: '점심', roman: 'jeomsim', sound: 'Lunch / Midday', mnemonic: 'Both the time AND the meal!' },
+          { char: '저녁', roman: 'jeonyeok', sound: 'Evening / Dinner', mnemonic: 'Both the time AND the meal!' },
+        ],
+      },
+      {
+        type: 'pattern',
+        title: 'Time + Subject + Object + Verb',
+        content: 'In Korean, time words usually go at the BEGINNING of the sentence:',
+        examples: [
+          { kr: '오늘 학교에 가요.', en: 'Today I go to school.' },
+          { kr: '내일 친구를 만나요.', en: 'Tomorrow I meet a friend.' },
+          { kr: '어제 한국 음식을 먹었어요.', en: 'Yesterday I ate Korean food.' },
+          { kr: '지금 커피를 마셔요.', en: 'Now I\'m drinking coffee.' },
+        ],
+      },
+      {
+        type: 'cultural-note',
+        title: 'Meals = Times of day',
+        content: 'In Korean, 아침 (morning/breakfast), 점심 (noon/lunch), and 저녁 (evening/dinner) each mean both the time period AND the meal. Context makes it clear: "아침에" = "in the morning", "아침을 먹어요" = "I eat breakfast."',
+      },
+    ],
+    vocabulary: [
+      { korean: '오늘', roman: 'oneul', english: 'Today', audio: true, example: { kr: '오늘 뭐 해요?', en: 'What are you doing today?' } },
+      { korean: '내일', roman: 'naeil', english: 'Tomorrow', audio: true, example: { kr: '내일 봐요!', en: 'See you tomorrow!' } },
+      { korean: '어제', roman: 'eoje', english: 'Yesterday', audio: true, example: { kr: '어제 뭐 했어요?', en: 'What did you do yesterday?' } },
+      { korean: '지금', roman: 'jigeum', english: 'Now', audio: true, example: { kr: '지금 바빠요.', en: 'I\'m busy now.' } },
+      { korean: '아침', roman: 'achim', english: 'Morning / Breakfast', audio: true, example: { kr: '아침에 빵을 먹어요.', en: 'I eat bread in the morning.' } },
+      { korean: '점심', roman: 'jeomsim', english: 'Lunch / Midday', audio: true, example: { kr: '점심 먹었어요?', en: 'Did you eat lunch?' } },
+      { korean: '저녁', roman: 'jeonyeok', english: 'Evening / Dinner', audio: true, example: { kr: '저녁에 만나요.', en: 'Let\'s meet in the evening.' } },
+    ],
+    exercises: [
+      {
+        type: 'multiple-choice',
+        prompt: '아침 can mean both "morning" and...',
+        options: ['Dinner', 'Lunch', 'Breakfast', 'Midnight'],
+        correct: 2,
+      },
+      {
+        type: 'matching',
+        prompt: 'Match the time word to its meaning',
+        pairs: [
+          { left: '오늘', right: 'Today' },
+          { left: '내일', right: 'Tomorrow' },
+          { left: '어제', right: 'Yesterday' },
+          { left: '지금', right: 'Now' },
+        ],
+      },
+      {
+        type: 'sentence-builder',
+        prompt: 'Build: "Today I go to school."',
+        tiles: ['오늘', '학교에', '가요'],
+        correct: ['오늘', '학교에', '가요'],
+        english: 'Today I go to school.',
+      },
+      {
+        type: 'listening',
+        audio: '내일',
+        prompt: 'What did you hear?',
+        options: ['오늘 (today)', '내일 (tomorrow)', '어제 (yesterday)', '지금 (now)'],
+        correct: 1,
+      },
+      {
+        type: 'multiple-choice',
+        prompt: 'Where do time words usually go in a Korean sentence?',
+        options: ['At the end', 'After the verb', 'At the beginning', 'After the object'],
+        correct: 2,
+      },
+      {
+        type: 'fill-blank',
+        prompt: '___ 뭐 했어요? (What did you do yesterday?)',
+        options: ['오늘', '내일', '어제', '지금'],
+        correct: 2,
+        hint: 'The past tense (했어요) tells you this is about a past time.',
+      },
+    ],
+    quizQuestionCount: 5,
+    passThreshold: 0.7,
+  },
+
+  // ─── Lesson 5.5: Descriptive Words (Adjectives) ──────────
+  {
+    id: 'u5-l5',
+    title: 'Descriptive Words',
+    subtitle: 'Korean adjectives are verbs!',
+    estimatedMinutes: 12,
+    teach: [
+      {
+        type: 'explanation',
+        title: 'The big surprise: adjectives ARE verbs',
+        content: 'In English, "good" is an adjective and "to be good" needs a helper verb. In Korean, 좋다 (good) IS already a verb! It means "to be good" all by itself. This means adjectives conjugate just like verbs.',
+      },
+      {
+        type: 'breakdown',
+        title: 'Essential Descriptive Words',
+        items: [
+          { char: '좋다 → 좋아요', roman: 'jota → joayo', sound: 'Good / To be good', mnemonic: 'Dictionary form → polite form. Regular conjugation.' },
+          { char: '크다 → 커요', roman: 'keuda → keoyo', sound: 'Big / To be big', mnemonic: 'ㅡ drops before 아/어 — 크 + 어요 = 커요' },
+          { char: '작다 → 작아요', roman: 'jakda → jagayo', sound: 'Small / To be small', mnemonic: 'Regular — last vowel ㅏ, so add 아요' },
+          { char: '많다 → 많아요', roman: 'manta → manayo', sound: 'Many / To be many', mnemonic: 'Regular conjugation' },
+          { char: '맛있다 → 맛있어요', roman: 'masitda → masisseoyo', sound: 'Delicious / To be delicious', mnemonic: '맛 (taste) + 있다 (to exist) = "taste exists" = delicious!' },
+          { char: '재미있다 → 재미있어요', roman: 'jaemiitda → jaemiisseoyo', sound: 'Fun / To be fun', mnemonic: '재미 (fun) + 있다 (to exist) = "fun exists" = it\'s fun!' },
+          { char: '바쁘다 → 바빠요', roman: 'bappeuda → bappayo', sound: 'Busy / To be busy', mnemonic: 'ㅡ drops, 바쁘 + 아요 = 바빠요' },
+          { char: '어렵다 → 어려워요', roman: 'eoryeopda → eoryeowoyo', sound: 'Difficult / To be difficult', mnemonic: 'ㅂ-irregular! ㅂ becomes 우 before a vowel' },
+          { char: '쉽다 → 쉬워요', roman: 'swipda → swiwoyo', sound: 'Easy / To be easy', mnemonic: 'ㅂ-irregular! Same rule — ㅂ → 우' },
+        ],
+      },
+      {
+        type: 'pattern',
+        title: 'Using descriptive verbs',
+        content: 'Since adjectives are verbs, they can end sentences directly:',
+        examples: [
+          { kr: '한국어가 어려워요.', en: 'Korean is difficult.' },
+          { kr: '이 음식이 맛있어요!', en: 'This food is delicious!' },
+          { kr: '오늘 바빠요.', en: 'I\'m busy today.' },
+          { kr: '학교가 커요.', en: 'The school is big.' },
+        ],
+      },
+      {
+        type: 'explanation',
+        title: 'Watch out: ㅂ-irregular verbs!',
+        content: 'Some adjectives ending in ㅂ are "irregular" — the ㅂ changes to 우 when conjugating:\n어렵다 → 어렵 + 어요 → 어려우 + 어요 → 어려워요\n쉽다 → 쉽 + 어요 → 쉬우 + 어요 → 쉬워요\nNot ALL ㅂ-ending words are irregular, but many common adjectives are.',
+      },
+      {
+        type: 'comparison',
+        title: 'Regular vs ㅂ-irregular',
+        content: 'See the difference in how they conjugate:',
+        pairs: [
+          { basic: '좋다 → 좋아요 (regular)', y: '어렵다 → 어려워요 (ㅂ-irregular)' },
+          { basic: '작다 → 작아요 (regular)', y: '쉽다 → 쉬워요 (ㅂ-irregular)' },
+        ],
+      },
+    ],
+    vocabulary: [
+      { korean: '좋아요', roman: 'joayo', english: 'Good / It\'s good', audio: true, example: { kr: '날씨가 좋아요.', en: 'The weather is good.' } },
+      { korean: '커요', roman: 'keoyo', english: 'Big / It\'s big', audio: true, example: { kr: '집이 커요.', en: 'The house is big.' } },
+      { korean: '작아요', roman: 'jagayo', english: 'Small / It\'s small', audio: true, example: { kr: '가게가 작아요.', en: 'The shop is small.' } },
+      { korean: '많아요', roman: 'manayo', english: 'Many / There are many', audio: true, example: { kr: '사람이 많아요.', en: 'There are many people.' } },
+      { korean: '맛있어요', roman: 'masisseoyo', english: 'Delicious', audio: true, example: { kr: '이 음식 맛있어요!', en: 'This food is delicious!' } },
+      { korean: '재미있어요', roman: 'jaemiisseoyo', english: 'Fun / Interesting', audio: true, example: { kr: '한국어가 재미있어요.', en: 'Korean is fun.' } },
+      { korean: '바빠요', roman: 'bappayo', english: 'Busy', audio: true, example: { kr: '오늘 바빠요.', en: 'I\'m busy today.' } },
+      { korean: '어려워요', roman: 'eoryeowoyo', english: 'Difficult', audio: true, example: { kr: '한국어가 어려워요.', en: 'Korean is difficult.' } },
+      { korean: '쉬워요', roman: 'swiwoyo', english: 'Easy', audio: true, example: { kr: '이거 쉬워요.', en: 'This is easy.' } },
+    ],
+    exercises: [
+      {
+        type: 'multiple-choice',
+        prompt: 'What is unique about Korean adjectives?',
+        options: ['They come before nouns only', 'They are verbs', 'They never change form', 'They don\'t exist'],
+        correct: 1,
+      },
+      {
+        type: 'multiple-choice',
+        prompt: '어렵다 conjugates to 어려워요 because it is a...',
+        options: ['Regular verb', 'ㅂ-irregular verb', 'ㄹ-irregular verb', 'ㅎ-irregular verb'],
+        correct: 1,
+      },
+      {
+        type: 'matching',
+        prompt: 'Match the adjective to its polite form',
+        pairs: [
+          { left: '좋다', right: '좋아요' },
+          { left: '크다', right: '커요' },
+          { left: '어렵다', right: '어려워요' },
+          { left: '쉽다', right: '쉬워요' },
+        ],
+      },
+      {
+        type: 'listening',
+        audio: '맛있어요',
+        prompt: 'What did you hear?',
+        options: ['재미있어요 (fun)', '맛있어요 (delicious)', '좋아요 (good)', '커요 (big)'],
+        correct: 1,
+      },
+      {
+        type: 'fill-blank',
+        prompt: '한국어가 ___. (Korean is difficult.)',
+        options: ['쉬워요', '어려워요', '좋아요', '커요'],
+        correct: 1,
+        hint: 'Which word means "difficult"?',
+      },
+      {
+        type: 'sentence-builder',
+        prompt: 'Build: "This food is delicious!"',
+        tiles: ['이', '음식이', '맛있어요!'],
+        correct: ['이', '음식이', '맛있어요!'],
+        english: 'This food is delicious!',
+      },
+      {
+        type: 'multiple-choice',
+        prompt: '맛있다 literally means...',
+        options: ['Taste is good', 'Taste exists', 'Taste is big', 'Taste is many'],
+        correct: 1,
+      },
+    ],
+    quizQuestionCount: 6,
+    passThreshold: 0.7,
+  },
+]
+
+export default lessons

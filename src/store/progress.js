@@ -1,48 +1,49 @@
-import { LEVELS, ACHIEVEMENTS, STAGES } from '../data/korean'
+import { LEVELS } from '../data/course'
+import { ACHIEVEMENTS } from '../data/achievements'
 
 const STORAGE_KEY = 'hanbuddy_progress'
 const DAY_MS = 86400000
 
 const defaultProgress = {
   xp: 0,
-  streak: 0,
+  streak: 0,          // current answer streak
   bestStreak: 0,
   totalCorrect: 0,
   totalAttempts: 0,
-  sentencesBuilt: 0,
+  totalReviews: 0,
+  perfectQuizzes: 0,
   achievements: [],
-  // Per-item mastery: { [word]: { seen, correct, stars, easinessFactor, interval, repetitions, nextReview, lastQuality } }
+
+  // Per-item mastery: { [korean]: { seen, correct, stars, easinessFactor, interval, repetitions, nextReview, lastQuality } }
   mastery: {},
-  // Per-stage completion
-  stageProgress: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0 },
-  // Per-lesson completion: { "stageId-lessonIdx": percentage }
+
+  // Unit completion: { [unitId]: true }
+  unitsCompleted: {},
+
+  // Lesson completion: { "unitId-lessonIdx": { completed, stars, quizScore, bestScore } }
   lessonProgress: {},
-  // Per-lesson milestones: { "stageId-lessonIdx": { learned: bool, quizScore: num } }
-  lessonMilestones: {},
-  // Which stages are unlocked
-  stagesUnlocked: [1],
-  // Spaced repetition data
-  srs: {},
+
+  // Which units are unlocked (unit 1 always unlocked)
+  unitsUnlocked: [1],
+
+  // Session tracking
   lastSession: null,
   sessionDates: [],
-  timedBests: {},
-  dailyChallengeDate: null,
+
+  // Hearts (per lesson attempt)
+  hearts: 5,
+
   settings: {
     audioEnabled: true,
     theme: 'dark',
+    dailyGoal: 20, // XP per day
   },
 }
 
-// --- SM-2 Spaced Repetition Algorithm ---
+// ─── SM-2 Spaced Repetition ────────────────────────────────
 
 const DEFAULT_EASINESS = 2.5
 const MIN_EASINESS = 1.3
-
-export function mapQuality(correct, currentStreak) {
-  if (!correct) return 2
-  if (currentStreak >= 3) return 5
-  return 4
-}
 
 function defaultSrsFields() {
   return {
@@ -56,6 +57,12 @@ function defaultSrsFields() {
 
 function ensureSrsFields(m) {
   return { ...defaultSrsFields(), ...m }
+}
+
+export function mapQuality(correct, currentStreak) {
+  if (!correct) return 2
+  if (currentStreak >= 3) return 5
+  return 4
 }
 
 export function sm2(card, quality) {
@@ -89,8 +96,8 @@ export function getNextReviewItems(mastery, count = 0) {
   const due = []
   for (const [word, rawEntry] of Object.entries(mastery)) {
     const entry = ensureSrsFields(rawEntry)
-    if (entry.nextReview <= now) {
-      const overdueDays = entry.nextReview === 0 ? Infinity : (now - entry.nextReview) / DAY_MS
+    if (entry.nextReview > 0 && entry.nextReview <= now) {
+      const overdueDays = (now - entry.nextReview) / DAY_MS
       due.push({ word, mastery: entry, overdueDays })
     }
   }
@@ -98,10 +105,15 @@ export function getNextReviewItems(mastery, count = 0) {
   return count > 0 ? due.slice(0, count) : due
 }
 
+// ─── Core Progress Functions ───────────────────────────────
+
 export function loadProgress() {
   try {
     const saved = localStorage.getItem(STORAGE_KEY)
-    if (saved) return { ...defaultProgress, ...JSON.parse(saved) }
+    if (saved) {
+      const parsed = JSON.parse(saved)
+      return { ...defaultProgress, ...parsed, settings: { ...defaultProgress.settings, ...(parsed.settings || {}) } }
+    }
   } catch (e) {
     console.warn('Failed to load progress:', e)
   }
@@ -117,6 +129,13 @@ export function saveProgress(progress) {
   }
 }
 
+export function resetProgress() {
+  localStorage.removeItem(STORAGE_KEY)
+  return { ...defaultProgress }
+}
+
+// ─── Level System ──────────────────────────────────────────
+
 export function getLevel(xp) {
   let current = LEVELS[0]
   for (const level of LEVELS) {
@@ -130,14 +149,16 @@ export function getLevel(xp) {
   return { ...current, xpForNext, progress: xpInLevel / xpNeeded }
 }
 
-export function getStars(mastery) {
-  if (!mastery || mastery.seen === 0) return 0
-  const ratio = mastery.correct / mastery.seen
-  if (mastery.seen >= 5 && ratio >= 0.9) return 3
-  if (mastery.seen >= 3 && ratio >= 0.7) return 2
-  if (mastery.seen >= 1 && ratio >= 0.5) return 1
+// ─── Stars ─────────────────────────────────────────────────
+
+export function getStarsForScore(score) {
+  if (score >= 0.95) return 3
+  if (score >= 0.8) return 2
+  if (score >= 0.7) return 1
   return 0
 }
+
+// ─── Record Answer (for exercises & quizzes) ───────────────
 
 export function recordAnswer(progress, word, correct) {
   const raw = progress.mastery[word] || { seen: 0, correct: 0, stars: 0 }
@@ -153,45 +174,136 @@ export function recordAnswer(progress, word, correct) {
   } else {
     progress.streak = 0
   }
-  m.stars = getStars(m)
+  const ratio = m.correct / m.seen
+  if (m.seen >= 5 && ratio >= 0.9) m.stars = 3
+  else if (m.seen >= 3 && ratio >= 0.7) m.stars = 2
+  else if (m.seen >= 1 && ratio >= 0.5) m.stars = 1
+  else m.stars = 0
+
   progress.totalAttempts++
 
   const quality = mapQuality(correct, progress.streak)
   const srsUpdate = sm2(m, quality)
-  m.easinessFactor = srsUpdate.easinessFactor
-  m.interval = srsUpdate.interval
-  m.repetitions = srsUpdate.repetitions
-  m.nextReview = srsUpdate.nextReview
-  m.lastQuality = srsUpdate.lastQuality
+  Object.assign(m, srsUpdate)
 
   progress.mastery[word] = m
   recordSession(progress)
   return progress
 }
 
-export function addXp(progress, amount) {
-  progress.xp += amount
+// ─── Lesson Completion ─────────────────────────────────────
+
+export function completeLesson(progress, unitId, lessonIdx, score) {
+  const key = `${unitId}-${lessonIdx}`
+  const stars = getStarsForScore(score)
+  const prev = progress.lessonProgress[key] || {}
+
+  progress.lessonProgress = {
+    ...progress.lessonProgress,
+    [key]: {
+      completed: true,
+      stars: Math.max(prev.stars || 0, stars),
+      quizScore: score,
+      bestScore: Math.max(prev.bestScore || 0, score),
+    },
+  }
+
+  // XP for lesson completion
+  progress.xp += 15
+  if (score >= 1.0) {
+    progress.perfectQuizzes = (progress.perfectQuizzes || 0) + 1
+    progress.xp += 25 // perfect bonus
+  }
+
   return progress
 }
+
+// ─── Unit Completion ───────────────────────────────────────
+
+export function completeUnit(progress, unitId) {
+  progress.unitsCompleted = { ...progress.unitsCompleted, [unitId]: true }
+  progress.xp += 50 // unit completion bonus
+
+  // Unlock next unit
+  const nextId = unitId + 1
+  if (!progress.unitsUnlocked.includes(nextId) && nextId <= 18) {
+    progress.unitsUnlocked = [...progress.unitsUnlocked, nextId]
+  }
+
+  return progress
+}
+
+// ─── Unlock next unit when last lesson of current unit is done ──
+
+export function checkUnitComplete(progress, unitId, totalLessons) {
+  let allDone = true
+  for (let i = 0; i < totalLessons; i++) {
+    const key = `${unitId}-${i}`
+    if (!progress.lessonProgress[key]?.completed) {
+      allDone = false
+      break
+    }
+  }
+  if (allDone && !progress.unitsCompleted[unitId]) {
+    return completeUnit(progress, unitId)
+  }
+  // Even if unit not complete, unlock next unit after first lesson pass
+  const nextId = unitId + 1
+  if (!progress.unitsUnlocked.includes(nextId) && nextId <= 18) {
+    // Unlock next unit after completing at least half the lessons
+    let completed = 0
+    for (let i = 0; i < totalLessons; i++) {
+      if (progress.lessonProgress[`${unitId}-${i}`]?.completed) completed++
+    }
+    if (completed >= Math.ceil(totalLessons / 2)) {
+      progress.unitsUnlocked = [...progress.unitsUnlocked, nextId]
+    }
+  }
+  return progress
+}
+
+// ─── Achievements ──────────────────────────────────────────
 
 export function checkAchievements(progress) {
   const newAchievements = []
   const earned = new Set(progress.achievements)
+  const hour = new Date().getHours()
+
+  const completedLessons = Object.values(progress.lessonProgress).filter(l => l.completed).length
+  const completedUnits = Object.keys(progress.unitsCompleted).length
+  const vocabCount = Object.keys(progress.mastery).length
+  const dailyStreak = getDailyStreak(progress.sessionDates)
+  const threeStarCount = Object.values(progress.lessonProgress).filter(l => l.stars >= 3).length
 
   const checks = {
-    first_word: () => Object.keys(progress.mastery).length >= 1,
-    phrases_done: () => (progress.stageProgress[1] || 0) >= 80,
-    grammar_done: () => (progress.stageProgress[2] || 0) >= 80,
-    vocab_50: () => Object.keys(progress.mastery).length >= 50,
-    vocab_100: () => Object.keys(progress.mastery).length >= 100,
-    perfect_quiz: () => progress.streak >= 5,
-    streak_3: () => progress.bestStreak >= 3,
-    streak_10: () => progress.bestStreak >= 10,
-    daily_3: () => getDailyStreak(progress.sessionDates) >= 3,
-    daily_7: () => getDailyStreak(progress.sessionDates) >= 7,
-    blitz_20: () => progress.timedBests?.blitz30?.score >= 20,
-    sentences_10: () => (progress.sentencesBuilt || 0) >= 10,
-    all_stages: () => STAGES.every(s => (progress.stageProgress[s.id] || 0) >= 80),
+    first_lesson: () => completedLessons >= 1,
+    hangul_master: () => progress.unitsCompleted[1],
+    introducer: () => progress.unitsCompleted[2],
+    unit5: () => completedUnits >= 5,
+    unit10: () => completedUnits >= 10,
+    unit18: () => completedUnits >= 18,
+    perfect_quiz: () => progress.perfectQuizzes >= 1,
+    ten_perfect: () => progress.perfectQuizzes >= 10,
+    vocab_50: () => vocabCount >= 50,
+    vocab_100: () => vocabCount >= 100,
+    vocab_200: () => vocabCount >= 200,
+    streak_3: () => dailyStreak >= 3,
+    streak_7: () => dailyStreak >= 7,
+    streak_14: () => dailyStreak >= 14,
+    streak_30: () => dailyStreak >= 30,
+    correct_5: () => progress.bestStreak >= 5,
+    correct_10: () => progress.bestStreak >= 10,
+    correct_20: () => progress.bestStreak >= 20,
+    first_review: () => progress.totalReviews >= 1,
+    review_50: () => progress.totalReviews >= 50,
+    review_200: () => progress.totalReviews >= 200,
+    xp_500: () => progress.xp >= 500,
+    xp_2000: () => progress.xp >= 2000,
+    xp_5000: () => progress.xp >= 5000,
+    night_owl: () => hour >= 0 && hour < 5,
+    early_bird: () => hour >= 5 && hour < 7,
+    three_stars: () => threeStarCount >= 1,
+    ten_three_stars: () => threeStarCount >= 10,
   }
 
   for (const [id, check] of Object.entries(checks)) {
@@ -207,18 +319,7 @@ export function checkAchievements(progress) {
   return newAchievements
 }
 
-export function unlockNextStage(progress, stageId) {
-  const maxStage = STAGES.length
-  if (!progress.stagesUnlocked.includes(stageId + 1) && stageId < maxStage) {
-    progress.stagesUnlocked.push(stageId + 1)
-  }
-  return progress
-}
-
-export function resetProgress() {
-  localStorage.removeItem(STORAGE_KEY)
-  return { ...defaultProgress }
-}
+// ─── Session & Streak ──────────────────────────────────────
 
 function todayStr() {
   return new Date().toISOString().slice(0, 10)
@@ -262,17 +363,7 @@ export function getSessionHeatmap(sessionDates = [], days = 90) {
   return result
 }
 
-export function updateTimedBest(progress, mode, score) {
-  if (!progress.timedBests) progress.timedBests = {}
-  const current = progress.timedBests[mode]
-  if (!current || score > current.score) {
-    progress.timedBests[mode] = { score, date: todayStr() }
-  }
-  return progress
-}
-
 export function updateSetting(progress, key, value) {
-  if (!progress.settings) progress.settings = { audioEnabled: true }
   progress.settings = { ...progress.settings, [key]: value }
   return progress
 }
