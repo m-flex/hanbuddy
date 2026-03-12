@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
-import { createEmptyCard, fsrs, Rating, State, type Card } from 'ts-fsrs';
+import { createEmptyCard, fsrs, Rating, State, type Card, type Grade } from 'ts-fsrs';
 
 export interface SrsCard {
   vocabId: string;
@@ -36,7 +36,7 @@ function rehydrateDates(cards: Record<string, SrsCard>): Record<string, SrsCard>
 
 export const useSrsStore = create<SrsStoreState>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       cards: {},
       newCardsToday: 0,
       newCardsDayStamp: '',
@@ -64,7 +64,7 @@ export const useSrsStore = create<SrsStoreState>()(
           const f = fsrs();
           const now = new Date();
           const scheduling = f.repeat(entry.card, now);
-          const nextCard = scheduling[rating].card;
+          const nextCard = scheduling[rating as Grade].card;
 
           const today = now.toISOString().slice(0, 10);
           const wasNew = entry.card.state === State.New;
@@ -134,7 +134,7 @@ export const useSrsStore = create<SrsStoreState>()(
           cards: rehydrateDates(state.cards ?? {}),
         };
       },
-      onRehydrateStorage: () => (state, error) => {
+      onRehydrateStorage: () => (_state, error) => {
         if (error) {
           console.warn('hanbuddy_srs corrupted, resetting', error);
           localStorage.removeItem('hanbuddy_srs');

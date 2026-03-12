@@ -3,6 +3,7 @@ import { VOCAB } from '../data/vocab';
 import { GRAMMAR } from '../data/grammar';
 import { LESSONS } from '../data/lessons';
 import { TOPICS } from '../data/topics';
+import { DIALOGUES } from '../data/dialogues';
 
 const VALID_SPEECH_LEVELS = new Set(['formal-high', 'polite', 'informal', 'plain']);
 const VALID_CONJUGATION_TYPES = new Set(['action', 'descriptive', 'noun', 'particle', 'expression']);
@@ -162,5 +163,92 @@ describe('cross-collection ID uniqueness', () => {
     const uniqueIds = new Set(allIds);
 
     expect(allIds.length).toBe(uniqueIds.size);
+  });
+});
+
+// ─── TOPIK Level Coverage ─────────────────────────────────────────────────────
+
+describe('VOCAB TOPIK level coverage (VOCAB-04)', () => {
+  const VALID_TOPIK_LEVELS = new Set(['beginner', 'intermediate']);
+
+  it('every vocab item has a valid topik_level', () => {
+    for (const item of VOCAB) {
+      expect(VALID_TOPIK_LEVELS).toContain(item.topik_level);
+    }
+  });
+});
+
+// ─── Vocab Examples Coverage ─────────────────────────────────────────────────
+
+describe('VOCAB examples coverage (VOCAB-05)', () => {
+  it('every vocab item has at least 2 example sentences', () => {
+    for (const item of VOCAB) {
+      expect(item.examples.length).toBeGreaterThanOrEqual(2);
+    }
+  });
+
+  it('every example sentence has non-empty korean, english, and romanization', () => {
+    for (const item of VOCAB) {
+      for (const ex of item.examples) {
+        expect(ex.korean.trim()).not.toBe('');
+        expect(ex.english.trim()).not.toBe('');
+        expect(ex.romanization.trim()).not.toBe('');
+      }
+    }
+  });
+});
+
+// ─── Dialogue Data Integrity ──────────────────────────────────────────────────
+
+describe('DIALOGUES data integrity (LIST-03)', () => {
+  it('has at least 3 dialogues', () => {
+    expect(DIALOGUES.length).toBeGreaterThanOrEqual(3);
+  });
+
+  it('all dialogue IDs are unique', () => {
+    const ids = DIALOGUES.map((d) => d.id);
+    expect(ids.length).toBe(new Set(ids).size);
+  });
+
+  it('all dialogue IDs match /^dlg-\\d{3}$/', () => {
+    for (const dialogue of DIALOGUES) {
+      expect(dialogue.id).toMatch(/^dlg-\d{3}$/);
+    }
+  });
+
+  it('each dialogue has 4-8 lines', () => {
+    for (const dialogue of DIALOGUES) {
+      expect(dialogue.lines.length).toBeGreaterThanOrEqual(4);
+      expect(dialogue.lines.length).toBeLessThanOrEqual(8);
+    }
+  });
+
+  it('each dialogue line has non-empty speaker, korean, english, and romanization', () => {
+    for (const dialogue of DIALOGUES) {
+      for (const line of dialogue.lines) {
+        expect(line.speaker.trim()).not.toBe('');
+        expect(line.korean.trim()).not.toBe('');
+        expect(line.english.trim()).not.toBe('');
+        expect(line.romanization.trim()).not.toBe('');
+      }
+    }
+  });
+
+  it("every dialogue's vocab_ids all exist in VOCAB", () => {
+    const vocabIds = new Set(VOCAB.map((v) => v.id));
+    for (const dialogue of DIALOGUES) {
+      for (const vid of dialogue.vocab_ids) {
+        expect(vocabIds).toContain(vid);
+      }
+    }
+  });
+
+  it("every dialogue's topics all exist in TOPICS", () => {
+    const topicIds = new Set(TOPICS.map((t) => t.id));
+    for (const dialogue of DIALOGUES) {
+      for (const topicId of dialogue.topics) {
+        expect(topicIds).toContain(topicId);
+      }
+    }
   });
 });

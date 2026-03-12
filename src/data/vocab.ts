@@ -8,12 +8,18 @@ export const VOCAB = [
     romanization: 'annyeonghaseyo',
     speech_level: 'polite',
     conjugation_type: 'expression',
+    topik_level: 'beginner',
     topics: ['top-001'],
     examples: [
       {
         korean: '안녕하세요, 만나서 반갑습니다.',
         english: 'Hello, nice to meet you.',
         romanization: 'Annyeonghaseyo, mannaseo bangapseumnida.',
+      },
+      {
+        korean: '안녕하세요! 오늘 날씨가 좋네요.',
+        english: 'Hello! The weather is nice today.',
+        romanization: 'Annyeonghaseyo! Oneul nalssiga jonne yo.',
       },
     ],
   },
@@ -24,12 +30,18 @@ export const VOCAB = [
     romanization: 'annyeonghi gaseyo',
     speech_level: 'polite',
     conjugation_type: 'expression',
+    topik_level: 'beginner',
     topics: ['top-001'],
     examples: [
       {
         korean: '내일 봐요. 안녕히 가세요.',
         english: 'See you tomorrow. Goodbye.',
         romanization: 'Naeil bwayo. Annyeonghi gaseyo.',
+      },
+      {
+        korean: '조심히 가세요. 안녕히 가세요.',
+        english: 'Take care. Goodbye.',
+        romanization: 'Josimhi gaseyo. Annyeonghi gaseyo.',
       },
     ],
   },
@@ -40,12 +52,18 @@ export const VOCAB = [
     romanization: 'gamsahamnida',
     speech_level: 'formal-high',
     conjugation_type: 'expression',
+    topik_level: 'beginner',
     topics: ['top-001', 'top-004'],
     examples: [
       {
         korean: '도와주셔서 감사합니다.',
         english: 'Thank you for helping me.',
         romanization: 'Dowajusyeoseo gamsahamnida.',
+      },
+      {
+        korean: '선물 감사합니다.',
+        english: 'Thank you for the gift.',
+        romanization: 'Seonmul gamsahamnida.',
       },
     ],
   },
@@ -56,6 +74,7 @@ export const VOCAB = [
     romanization: 'mul',
     speech_level: 'plain',
     conjugation_type: 'noun',
+    topik_level: 'beginner',
     topics: ['top-003', 'top-004'],
     examples: [
       {
@@ -77,12 +96,18 @@ export const VOCAB = [
     romanization: 'bap',
     speech_level: 'plain',
     conjugation_type: 'noun',
+    topik_level: 'beginner',
     topics: ['top-003', 'top-004'],
     examples: [
       {
         korean: '밥을 먹었어요.',
         english: 'I ate a meal.',
         romanization: 'Babeul meogeosseoyo.',
+      },
+      {
+        korean: '밥이 맛있어요.',
+        english: 'The food is delicious.',
+        romanization: 'Babi massisseoyo.',
       },
     ],
   },
@@ -93,7 +118,20 @@ export const VOCAB = [
     romanization: 'saram',
     speech_level: 'plain',
     conjugation_type: 'noun',
+    topik_level: 'beginner',
     topics: ['top-004', 'top-006'],
+    examples: [
+      {
+        korean: '그 사람은 학생이에요.',
+        english: 'That person is a student.',
+        romanization: 'Geu sarameun haksaengieyo.',
+      },
+      {
+        korean: '좋은 사람이에요.',
+        english: 'They are a good person.',
+        romanization: 'Joeun saramieyo.',
+      },
+    ],
   },
   {
     id: 'voc-007',
@@ -102,12 +140,18 @@ export const VOCAB = [
     romanization: 'gajok',
     speech_level: 'plain',
     conjugation_type: 'noun',
+    topik_level: 'beginner',
     topics: ['top-006'],
     examples: [
       {
         korean: '가족이 몇 명이에요?',
         english: 'How many people are in your family?',
         romanization: 'Gajogi myeot myeongiеyo?',
+      },
+      {
+        korean: '가족과 함께 여행해요.',
+        english: 'I travel with my family.',
+        romanization: 'Gajokgwa hamkke yeohaenghaeyo.',
       },
     ],
   },
@@ -118,7 +162,20 @@ export const VOCAB = [
     romanization: 'eodi',
     speech_level: 'plain',
     conjugation_type: 'noun',
+    topik_level: 'beginner',
     topics: ['top-004', 'top-005'],
+    examples: [
+      {
+        korean: '어디에 가요?',
+        english: 'Where are you going?',
+        romanization: 'Eodie gayo?',
+      },
+      {
+        korean: '화장실이 어디에 있어요?',
+        english: 'Where is the restroom?',
+        romanization: 'Hwajangsiri eodie isseoyo?',
+      },
+    ],
   },
   {
     id: 'voc-009',
@@ -127,7 +184,20 @@ export const VOCAB = [
     romanization: 'ne',
     speech_level: 'polite',
     conjugation_type: 'expression',
+    topik_level: 'beginner',
     topics: ['top-001', 'top-004'],
+    examples: [
+      {
+        korean: '네, 맞아요.',
+        english: 'Yes, that\'s right.',
+        romanization: 'Ne, majayo.',
+      },
+      {
+        korean: '네, 알겠습니다.',
+        english: 'Yes, I understand.',
+        romanization: 'Ne, algesseumnida.',
+      },
+    ],
   },
   {
     id: 'voc-010',
@@ -136,7 +206,20 @@ export const VOCAB = [
     romanization: 'aniyo',
     speech_level: 'polite',
     conjugation_type: 'expression',
+    topik_level: 'beginner',
     topics: ['top-001', 'top-004'],
+    examples: [
+      {
+        korean: '아니요, 괜찮아요.',
+        english: 'No, it\'s okay.',
+        romanization: 'Aniyo, gwaenchanayo.',
+      },
+      {
+        korean: '아니요, 감사합니다.',
+        english: 'No, thank you.',
+        romanization: 'Aniyo, gamsahamnida.',
+      },
+    ],
   },
   {
     id: 'voc-011',
@@ -145,6 +228,7 @@ export const VOCAB = [
     romanization: 'hana',
     speech_level: 'plain',
     conjugation_type: 'noun',
+    topik_level: 'beginner',
     topics: ['top-002'],
     examples: [
       {
@@ -166,12 +250,18 @@ export const VOCAB = [
     romanization: 'dul',
     speech_level: 'plain',
     conjugation_type: 'noun',
+    topik_level: 'beginner',
     topics: ['top-002'],
     examples: [
       {
         korean: '우리 둘이 같이 가요.',
         english: 'The two of us will go together.',
         romanization: 'Uri duri gachi gayo.',
+      },
+      {
+        korean: '사탕 둘 주세요.',
+        english: 'Please give me two candies.',
+        romanization: 'Satang dul juseyo.',
       },
     ],
   },
@@ -182,7 +272,20 @@ export const VOCAB = [
     romanization: 'set',
     speech_level: 'plain',
     conjugation_type: 'noun',
+    topik_level: 'beginner',
     topics: ['top-002'],
+    examples: [
+      {
+        korean: '셋 다 주세요.',
+        english: 'Please give me all three.',
+        romanization: 'Set da juseyo.',
+      },
+      {
+        korean: '우리는 셋이에요.',
+        english: 'There are three of us.',
+        romanization: 'Urineun sesieyo.',
+      },
+    ],
   },
   {
     id: 'voc-014',
@@ -191,12 +294,18 @@ export const VOCAB = [
     romanization: 'yeol',
     speech_level: 'plain',
     conjugation_type: 'noun',
+    topik_level: 'beginner',
     topics: ['top-002'],
     examples: [
       {
         korean: '제 나이는 열 살이에요.',
         english: 'I am ten years old.',
         romanization: 'Je naineun yeol sariéyo.',
+      },
+      {
+        korean: '열 개 주세요.',
+        english: 'Please give me ten.',
+        romanization: 'Yeol gae juseyo.',
       },
     ],
   },
@@ -207,6 +316,7 @@ export const VOCAB = [
     romanization: 'gimchi',
     speech_level: 'plain',
     conjugation_type: 'noun',
+    topik_level: 'beginner',
     topics: ['top-003', 'top-006'],
     examples: [
       {
@@ -228,6 +338,7 @@ export const VOCAB = [
     romanization: 'keopi',
     speech_level: 'plain',
     conjugation_type: 'noun',
+    topik_level: 'beginner',
     topics: ['top-003'],
     examples: [
       {
@@ -249,12 +360,18 @@ export const VOCAB = [
     romanization: 'ppang',
     speech_level: 'plain',
     conjugation_type: 'noun',
+    topik_level: 'beginner',
     topics: ['top-003'],
     examples: [
       {
         korean: '아침에 빵을 먹어요.',
         english: 'I eat bread in the morning.',
         romanization: 'Achime ppangeul meogeoyo.',
+      },
+      {
+        korean: '이 빵은 달아요.',
+        english: 'This bread is sweet.',
+        romanization: 'I ppangeun darayo.',
       },
     ],
   },
@@ -265,6 +382,7 @@ export const VOCAB = [
     romanization: 'juseyo',
     speech_level: 'polite',
     conjugation_type: 'expression',
+    topik_level: 'beginner',
     topics: ['top-001', 'top-003'],
     examples: [
       {
@@ -286,6 +404,7 @@ export const VOCAB = [
     romanization: 'eolmayeyo?',
     speech_level: 'polite',
     conjugation_type: 'expression',
+    topik_level: 'beginner',
     topics: ['top-002', 'top-003'],
     examples: [
       {
@@ -307,6 +426,7 @@ export const VOCAB = [
     romanization: 'sillyehamnida',
     speech_level: 'formal-high',
     conjugation_type: 'expression',
+    topik_level: 'beginner',
     topics: ['top-001', 'top-004'],
     examples: [
       {
