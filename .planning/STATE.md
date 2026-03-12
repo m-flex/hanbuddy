@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 4 context gathered
-last_updated: "2026-03-12T15:48:48.875Z"
+stopped_at: Completed 04-01-PLAN.md
+last_updated: "2026-03-12T16:10:24.150Z"
 last_activity: 2026-03-12 — Roadmap created, phases derived from requirements
 progress:
   total_phases: 4
   completed_phases: 3
-  total_plans: 11
-  completed_plans: 11
+  total_plans: 14
+  completed_plans: 12
   percent: 0
 ---
 
@@ -61,6 +61,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 03-practice P05 | 3min | 2 tasks | 8 files |
 | Phase 03-practice P03 | 3min | 2 tasks | 4 files |
 | Phase 03-practice P04 | 3min | 2 tasks | 6 files |
+| Phase 04-reading-and-curriculum P01 | 3min | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -98,6 +99,9 @@ Recent decisions affecting current work:
 - [Phase 03-practice]: Nested button HTML invalid — front face outer container changed from button to div to fix nested interactive element error
 - [Phase 03-practice]: compareKorean uses NFC normalize + trim — handles Korean IME Unicode output differences
 - [Phase 03-practice]: pickDistractors prefers same conjugation_type for appropriate challenge without obvious category mismatch
+- [Phase 04-reading-and-curriculum]: useGlossToggle uses string | null (not Set) — only one word revealed at a time, consistent with useRomanizationToggle locked UX decision
+- [Phase 04-reading-and-curriculum]: isPassageUnlocked gates by full level completion (all lessons at that level) — not sequential chaining like isLessonUnlocked
+- [Phase 04-reading-and-curriculum]: v1->v2 progress store migration adds completedReadings: [] preserving all existing lesson progress
 
 ### Pending Todos
 
@@ -110,6 +114,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T15:48:48.872Z
-Stopped at: Phase 4 context gathered
-Resume file: .planning/phases/04-reading-and-curriculum/04-CONTEXT.md
+Last session: 2026-03-12T16:10:24.147Z
+Stopped at: Completed 04-01-PLAN.md
+Resume file: None

@@ -31,8 +31,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Reading
 
-- [ ] **READ-01**: User can read graded Korean text passages matched to their level
-- [ ] **READ-02**: Reading passages include vocabulary glossing for unknown words
+- [x] **READ-01**: User can read graded Korean text passages matched to their level
+- [x] **READ-02**: Reading passages include vocabulary glossing for unknown words
 - [ ] **READ-03**: Reading passages support line-by-line audio playback
 
 ### Progression
@@ -40,7 +40,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **PROG-01**: Lessons are organized in structured levels that unlock sequentially
 - [x] **PROG-02**: User can browse vocabulary and lessons by topic regardless of level
 - [ ] **PROG-03**: User can view a visual curriculum map showing completion state
-- [ ] **PROG-04**: User progress persists across sessions via localStorage
+- [x] **PROG-04**: User progress persists across sessions via localStorage
 - [x] **PROG-05**: Clear beginner orientation directs new users to Level 1
 
 ### Foundation
@@ -103,11 +103,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LIST-02 | Phase 3 | Complete |
 | LIST-03 | Phase 3 | Complete |
 | GRAM-03 | Phase 3 | Complete |
-| READ-01 | Phase 4 | Pending |
-| READ-02 | Phase 4 | Pending |
+| READ-01 | Phase 4 | Complete |
+| READ-02 | Phase 4 | Complete |
 | READ-03 | Phase 4 | Pending |
 | PROG-03 | Phase 4 | Pending |
-| PROG-04 | Phase 4 | Pending |
+| PROG-04 | Phase 4 | Complete |
 
 **Coverage:**
 - v1 requirements: 25 total
