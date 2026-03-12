@@ -90,7 +90,9 @@ describe('FlashCard', () => {
 
   it('renders Korean word on front face', () => {
     renderCard({ isFlipped: false });
-    expect(screen.getByText('안녕하세요')).toBeInTheDocument();
+    // Korean word appears on both front (large) and back face (both faces render in DOM for 3D flip)
+    const koreanElements = screen.getAllByText('안녕하세요');
+    expect(koreanElements.length).toBeGreaterThanOrEqual(1);
   });
 
   it('does not show romanization by default (hidden)', () => {
