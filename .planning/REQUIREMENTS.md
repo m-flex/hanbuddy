@@ -38,7 +38,7 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Progression
 
 - [ ] **PROG-01**: Lessons are organized in structured levels that unlock sequentially
-- [ ] **PROG-02**: User can browse vocabulary and lessons by topic regardless of level
+- [x] **PROG-02**: User can browse vocabulary and lessons by topic regardless of level
 - [ ] **PROG-03**: User can view a visual curriculum map showing completion state
 - [ ] **PROG-04**: User progress persists across sessions via localStorage
 - [x] **PROG-05**: Clear beginner orientation directs new users to Level 1
@@ -93,7 +93,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | GRAM-05 | Phase 2 | Complete |
 | LIST-01 | Phase 2 | Complete |
 | PROG-01 | Phase 2 | Pending |
-| PROG-02 | Phase 2 | Pending |
+| PROG-02 | Phase 2 | Complete |
 | PROG-05 | Phase 2 | Complete |
 | VOCAB-01 | Phase 3 | Pending |
 | VOCAB-02 | Phase 3 | Pending |
