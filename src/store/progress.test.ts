@@ -64,9 +64,7 @@ describe('useProgressStore', () => {
     });
 
     it('stores version 1 in persisted data', () => {
-      const stored = localStorage.getItem('hanbuddy_progress');
-      // After store initializes it should write version 1
-      // We check after an action that triggers persist
+      // After an action that triggers persist, check the stored version
       useProgressStore.getState().completeLesson('les-001');
       const storedAfter = localStorage.getItem('hanbuddy_progress');
       const parsed = JSON.parse(storedAfter!);
