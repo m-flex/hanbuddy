@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Data schema, storage layer, engine, and project scaffolding (completed 2026-03-12)
 - [ ] **Phase 2: Lessons** - Audio service, lesson viewer, core grammar content, and progression structure
-- [ ] **Phase 3: Practice** - SRS vocabulary drills, cloze exercises, listening, and sentence building
+- [x] **Phase 3: Practice** - SRS vocabulary drills, cloze exercises, listening, and sentence building (completed 2026-03-12)
 - [ ] **Phase 4: Reading and Curriculum** - Graded reading passages, progress persistence, and visual curriculum map
 
 ## Phase Details
@@ -65,7 +65,7 @@ Plans:
   4. User can complete a listening exercise by hearing audio and selecting the correct Korean or English answer from multiple choices
   5. User can complete a sentence-building exercise by arranging word tiles into correct Korean word order
   6. Each vocabulary item shows its TOPIK-I level tag — user can see at a glance whether a word is TOPIK-I Beginner or Intermediate
-**Plans:** 2/5 plans executed
+**Plans:** 5/5 plans complete
 
 Plans:
 - [ ] 03-01-PLAN.md — Install ts-fsrs, extend content types (TOPIK level, dialogues), author missing vocab examples
@@ -94,5 +94,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-03-12 |
 | 2. Lessons | 2/4 | In Progress|  |
-| 3. Practice | 2/5 | In Progress|  |
+| 3. Practice | 5/5 | Complete   | 2026-03-12 |
 | 4. Reading and Curriculum | 0/TBD | Not started | - |

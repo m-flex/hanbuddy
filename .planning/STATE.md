@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 03-practice-02-PLAN.md
-last_updated: "2026-03-12T14:53:47.547Z"
+stopped_at: Completed 03-practice-04-PLAN.md
+last_updated: "2026-03-12T15:00:21.247Z"
 last_activity: 2026-03-12 — Roadmap created, phases derived from requirements
 progress:
   total_phases: 4
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 11
-  completed_plans: 8
+  completed_plans: 11
   percent: 0
 ---
 
@@ -58,6 +58,9 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 02-lessons P03 | 5min | 3 tasks | 11 files |
 | Phase 03-practice P01 | 12min | 2 tasks | 6 files |
 | Phase 03-practice P02 | 15min | 2 tasks | 11 files |
+| Phase 03-practice P05 | 3min | 2 tasks | 8 files |
+| Phase 03-practice P03 | 3min | 2 tasks | 4 files |
+| Phase 03-practice P04 | 3min | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -88,6 +91,13 @@ Recent decisions affecting current work:
 - [Phase 03-practice]: examples is required on VocabItem (changed from optional) — ensures all SRS cards have study material at compile time
 - [Phase 03-practice]: Grade cast used for ts-fsrs scheduling[rating as Grade] — IPreview keyed by Grade excludes Rating.Manual; recordReview accepts Rating and casts for type safety
 - [Phase 03-practice]: useSrsSession derives session queue on every call — not persisted — to avoid stale-queue bugs after clock changes or missed reviews
+- [Phase 03-practice-05]: SentenceBuildPage generates questions inline (no exerciseUtils import) — Plan 04 creates that file in parallel
+- [Phase 03-practice-05]: Korean sentence comparison uses .normalize('NFC').trim() to handle Unicode normalization edge cases
+- [Phase 03-practice-05]: DialoguePlayer shows romanization by default — dialogue lines are longer than single vocab and benefit from reading support
+- [Phase 03-practice]: FlashCard is a pure controlled component — parent FlashcardReviewPage owns isFlipped state and calls speak() on flip
+- [Phase 03-practice]: Nested button HTML invalid — front face outer container changed from button to div to fix nested interactive element error
+- [Phase 03-practice]: compareKorean uses NFC normalize + trim — handles Korean IME Unicode output differences
+- [Phase 03-practice]: pickDistractors prefers same conjugation_type for appropriate challenge without obvious category mismatch
 
 ### Pending Todos
 
@@ -100,6 +110,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T14:53:47.544Z
-Stopped at: Completed 03-practice-02-PLAN.md
+Last session: 2026-03-12T15:00:21.245Z
+Stopped at: Completed 03-practice-04-PLAN.md
 Resume file: None
