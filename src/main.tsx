@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       { path: 'read/:passageId', element: <ReadingPassagePage /> },
     ],
   },
-]);
+], { basename: import.meta.env.BASE_URL });
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
