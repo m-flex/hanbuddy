@@ -53,6 +53,12 @@ describe('VOCAB data integrity', () => {
       }
     }
   });
+
+  // VOCAB-EX: At least 5 vocab items have non-empty examples arrays
+  it('at least 5 vocab items have example sentences', () => {
+    const withExamples = VOCAB.filter((v) => v.examples && v.examples.length > 0);
+    expect(withExamples.length).toBeGreaterThanOrEqual(5);
+  });
 });
 
 // ─── Grammar Data Integrity ──────────────────────────────────────────────────
@@ -73,9 +79,10 @@ describe('GRAMMAR data integrity', () => {
     }
   });
 
-  it('every grammar point has at least 1 example sentence', () => {
+  // GRAM-02: Every grammar point must have at least 3 example sentences
+  it('every grammar point has at least 3 example sentences (GRAM-02)', () => {
     for (const point of GRAMMAR) {
-      expect(point.examples.length).toBeGreaterThan(0);
+      expect(point.examples.length).toBeGreaterThanOrEqual(3);
     }
   });
 
@@ -87,13 +94,24 @@ describe('GRAMMAR data integrity', () => {
       }
     }
   });
+
+  // GRAM-05: Grammar content must cover both polite (해요체) and formal-high (합쇼체) speech levels
+  it('contains at least one grammar point with speech_level "polite" (GRAM-05)', () => {
+    const politePoints = GRAMMAR.filter((g) => g.speech_level === 'polite');
+    expect(politePoints.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('contains at least one grammar point with speech_level "formal-high" (GRAM-05)', () => {
+    const formalPoints = GRAMMAR.filter((g) => g.speech_level === 'formal-high');
+    expect(formalPoints.length).toBeGreaterThanOrEqual(1);
+  });
 });
 
 // ─── Lesson Data Integrity ───────────────────────────────────────────────────
 
 describe('LESSONS data integrity', () => {
-  it('has at least one entry', () => {
-    expect(LESSONS.length).toBeGreaterThan(0);
+  it('has at least 5 lessons', () => {
+    expect(LESSONS.length).toBeGreaterThanOrEqual(5);
   });
 
   it('all IDs are unique', () => {
@@ -105,6 +123,11 @@ describe('LESSONS data integrity', () => {
     for (const lesson of LESSONS) {
       expect(lesson.id).toMatch(/^les-\d{3}$/);
     }
+  });
+
+  it('lessons span at least 2 distinct levels', () => {
+    const levels = new Set(LESSONS.map((l) => l.level));
+    expect(levels.size).toBeGreaterThanOrEqual(2);
   });
 
   it("every lesson's vocab_ids all exist in VOCAB", () => {
