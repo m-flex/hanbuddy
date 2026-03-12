@@ -1,0 +1,141 @@
+import type { VocabItem } from '../types/content';
+
+export const VOCAB = [
+  {
+    id: 'voc-001',
+    korean: '안녕하세요',
+    english: 'Hello (formal polite)',
+    romanization: 'annyeonghaseyo',
+    speech_level: 'polite',
+    conjugation_type: 'expression',
+    topics: ['top-001'],
+    examples: [
+      {
+        korean: '안녕하세요, 만나서 반갑습니다.',
+        english: 'Hello, nice to meet you.',
+        romanization: 'Annyeonghaseyo, mannaseo bangapseumnida.',
+      },
+    ],
+  },
+  {
+    id: 'voc-002',
+    korean: '안녕히 가세요',
+    english: 'Goodbye (to person leaving)',
+    romanization: 'annyeonghi gaseyo',
+    speech_level: 'polite',
+    conjugation_type: 'expression',
+    topics: ['top-001'],
+    examples: [
+      {
+        korean: '내일 봐요. 안녕히 가세요.',
+        english: 'See you tomorrow. Goodbye.',
+        romanization: 'Naeil bwayo. Annyeonghi gaseyo.',
+      },
+    ],
+  },
+  {
+    id: 'voc-003',
+    korean: '감사합니다',
+    english: 'Thank you (formal)',
+    romanization: 'gamsahamnida',
+    speech_level: 'formal-high',
+    conjugation_type: 'expression',
+    topics: ['top-001', 'top-004'],
+    examples: [
+      {
+        korean: '도와주셔서 감사합니다.',
+        english: 'Thank you for helping me.',
+        romanization: 'Dowajusyeoseo gamsahamnida.',
+      },
+    ],
+  },
+  {
+    id: 'voc-004',
+    korean: '물',
+    english: 'Water',
+    romanization: 'mul',
+    speech_level: 'plain',
+    conjugation_type: 'noun',
+    topics: ['top-003', 'top-004'],
+    examples: [
+      {
+        korean: '물 한 잔 주세요.',
+        english: 'Please give me a glass of water.',
+        romanization: 'Mul han jan juseyo.',
+      },
+      {
+        korean: '물이 차갑네요.',
+        english: 'The water is cold.',
+        romanization: 'Muri chagapneyo.',
+      },
+    ],
+  },
+  {
+    id: 'voc-005',
+    korean: '밥',
+    english: 'Rice / Meal',
+    romanization: 'bap',
+    speech_level: 'plain',
+    conjugation_type: 'noun',
+    topics: ['top-003', 'top-004'],
+    examples: [
+      {
+        korean: '밥을 먹었어요.',
+        english: 'I ate a meal.',
+        romanization: 'Babeul meogeosseoyo.',
+      },
+    ],
+  },
+  {
+    id: 'voc-006',
+    korean: '사람',
+    english: 'Person / People',
+    romanization: 'saram',
+    speech_level: 'plain',
+    conjugation_type: 'noun',
+    topics: ['top-004', 'top-006'],
+  },
+  {
+    id: 'voc-007',
+    korean: '가족',
+    english: 'Family',
+    romanization: 'gajok',
+    speech_level: 'plain',
+    conjugation_type: 'noun',
+    topics: ['top-006'],
+    examples: [
+      {
+        korean: '가족이 몇 명이에요?',
+        english: 'How many people are in your family?',
+        romanization: 'Gajogi myeot myeongiеyo?',
+      },
+    ],
+  },
+  {
+    id: 'voc-008',
+    korean: '어디',
+    english: 'Where',
+    romanization: 'eodi',
+    speech_level: 'plain',
+    conjugation_type: 'noun',
+    topics: ['top-004', 'top-005'],
+  },
+  {
+    id: 'voc-009',
+    korean: '네',
+    english: 'Yes',
+    romanization: 'ne',
+    speech_level: 'polite',
+    conjugation_type: 'expression',
+    topics: ['top-001', 'top-004'],
+  },
+  {
+    id: 'voc-010',
+    korean: '아니요',
+    english: 'No',
+    romanization: 'aniyo',
+    speech_level: 'polite',
+    conjugation_type: 'expression',
+    topics: ['top-001', 'top-004'],
+  },
+] satisfies VocabItem[];
