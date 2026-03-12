@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 3 context gathered
-last_updated: "2026-03-12T14:18:07.124Z"
+stopped_at: Completed 03-practice-03-01-PLAN.md
+last_updated: "2026-03-12T14:52:57.720Z"
 last_activity: 2026-03-12 — Roadmap created, phases derived from requirements
 progress:
   total_phases: 4
   completed_phases: 2
-  total_plans: 6
-  completed_plans: 6
+  total_plans: 11
+  completed_plans: 8
   percent: 0
 ---
 
@@ -56,6 +56,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 02-lessons P01 | 15min | 3 tasks | 22 files |
 | Phase 02-lessons P04 | 5min | 3 tasks | 7 files |
 | Phase 02-lessons P03 | 5min | 3 tasks | 11 files |
+| Phase 03-practice P01 | 12min | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -82,6 +83,8 @@ Recent decisions affecting current work:
 - [Phase 02-03]: ConjugationTable derives rows from grammar pattern string matching — keeps data files clean, handles all 4 particle patterns automatically
 - [Phase 02-03]: GrammarSection anchor uses grammarPoint.id directly (grm-NNN) for deep-link URL support per GRAM-04
 - [Phase 02-03]: LessonDetailPage calls setActiveLesson() matching actual store API — plan spec had setLastActiveLesson discrepancy
+- [Phase 03-practice]: TopikLevel is a required field on VocabItem (not optional) — all 20 current items are beginner TOPIK I-II content
+- [Phase 03-practice]: examples is required on VocabItem (changed from optional) — ensures all SRS cards have study material at compile time
 
 ### Pending Todos
 
@@ -94,6 +97,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T14:18:07.121Z
-Stopped at: Phase 3 context gathered
-Resume file: .planning/phases/03-practice/03-CONTEXT.md
+Last session: 2026-03-12T14:52:57.717Z
+Stopped at: Completed 03-practice-03-01-PLAN.md
+Resume file: None

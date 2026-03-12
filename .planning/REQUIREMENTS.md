@@ -12,8 +12,8 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **VOCAB-01**: User can learn vocabulary through flashcards showing Korean, English, and example sentences
 - [ ] **VOCAB-02**: Flashcard review uses FSRS spaced repetition with confidence ratings (Again/Hard/Good/Easy)
 - [ ] **VOCAB-03**: User can practice vocabulary through cloze (fill-in-the-blank) exercises in sentence context
-- [ ] **VOCAB-04**: Vocabulary items are tagged with TOPIK-I level for benchmark alignment
-- [ ] **VOCAB-05**: Each vocabulary item includes 2-3 example sentences with audio
+- [x] **VOCAB-04**: Vocabulary items are tagged with TOPIK-I level for benchmark alignment
+- [x] **VOCAB-05**: Each vocabulary item includes 2-3 example sentences with audio
 
 ### Grammar
 
@@ -27,7 +27,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **LIST-01**: All audio supports adjustable speed (0.75x slow / 1.0x normal)
 - [ ] **LIST-02**: User can practice listening through multiple-choice exercises (hear audio, select answer)
-- [ ] **LIST-03**: User can learn through dialogue-based lessons (4-8 line conversations with playable lines)
+- [x] **LIST-03**: User can learn through dialogue-based lessons (4-8 line conversations with playable lines)
 
 ### Reading
 
@@ -98,10 +98,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | VOCAB-01 | Phase 3 | Pending |
 | VOCAB-02 | Phase 3 | Pending |
 | VOCAB-03 | Phase 3 | Pending |
-| VOCAB-04 | Phase 3 | Pending |
-| VOCAB-05 | Phase 3 | Pending |
+| VOCAB-04 | Phase 3 | Complete |
+| VOCAB-05 | Phase 3 | Complete |
 | LIST-02 | Phase 3 | Pending |
-| LIST-03 | Phase 3 | Pending |
+| LIST-03 | Phase 3 | Complete |
 | GRAM-03 | Phase 3 | Pending |
 | READ-01 | Phase 4 | Pending |
 | READ-02 | Phase 4 | Pending |

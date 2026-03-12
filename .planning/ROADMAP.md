@@ -65,7 +65,7 @@ Plans:
   4. User can complete a listening exercise by hearing audio and selecting the correct Korean or English answer from multiple choices
   5. User can complete a sentence-building exercise by arranging word tiles into correct Korean word order
   6. Each vocabulary item shows its TOPIK-I level tag — user can see at a glance whether a word is TOPIK-I Beginner or Intermediate
-**Plans:** 5 plans
+**Plans:** 2/5 plans executed
 
 Plans:
 - [ ] 03-01-PLAN.md — Install ts-fsrs, extend content types (TOPIK level, dialogues), author missing vocab examples
@@ -94,5 +94,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-03-12 |
 | 2. Lessons | 2/4 | In Progress|  |
-| 3. Practice | 0/5 | Not started | - |
+| 3. Practice | 2/5 | In Progress|  |
 | 4. Reading and Curriculum | 0/TBD | Not started | - |
