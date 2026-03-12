@@ -83,7 +83,7 @@ Plans:
   2. User can tap a line in a reading passage to hear it read aloud at their chosen speed
   3. User can view a visual curriculum map showing which lessons are complete, in progress, or locked across all levels
   4. Closing the browser and reopening the app restores the user's lesson completion state, SRS card states, and settings exactly as left — no progress is lost
-**Plans:** 1/3 plans executed
+**Plans:** 2/3 plans executed
 
 Plans:
 - [ ] 04-01-PLAN.md — Reading types, passage data, unlock utility, gloss hook, and progress store v2
@@ -100,4 +100,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Foundation | 2/2 | Complete   | 2026-03-12 |
 | 2. Lessons | 2/4 | In Progress|  |
 | 3. Practice | 5/5 | Complete   | 2026-03-12 |
-| 4. Reading and Curriculum | 1/3 | In Progress|  |
+| 4. Reading and Curriculum | 2/3 | In Progress|  |

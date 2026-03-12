@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 04-01-PLAN.md
-last_updated: "2026-03-12T16:10:24.150Z"
+stopped_at: Completed 04-02-PLAN.md (CurriculumMapPage and 5-tab navigation)
+last_updated: "2026-03-12T16:11:40.488Z"
 last_activity: 2026-03-12 — Roadmap created, phases derived from requirements
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 14
-  completed_plans: 12
+  completed_plans: 13
   percent: 0
 ---
 
@@ -62,6 +62,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 03-practice P03 | 3min | 2 tasks | 4 files |
 | Phase 03-practice P04 | 3min | 2 tasks | 6 files |
 | Phase 04-reading-and-curriculum P01 | 3min | 2 tasks | 8 files |
+| Phase 04-reading-and-curriculum P02 | 4min | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -102,6 +103,9 @@ Recent decisions affecting current work:
 - [Phase 04-reading-and-curriculum]: useGlossToggle uses string | null (not Set) — only one word revealed at a time, consistent with useRomanizationToggle locked UX decision
 - [Phase 04-reading-and-curriculum]: isPassageUnlocked gates by full level completion (all lessons at that level) — not sequential chaining like isLessonUnlocked
 - [Phase 04-reading-and-curriculum]: v1->v2 progress store migration adds completedReadings: [] preserving all existing lesson progress
+- [Phase 04-reading-and-curriculum]: CurriculumNode uses data-testid='node-{state}' for test-targeting — avoids brittle aria-label matching for icon state assertions
+- [Phase 04-reading-and-curriculum]: [Phase 04-02]: 5-tab layout uses text-[10px] labels and icon size 18 to prevent wrapping at 320px viewport
+- [Phase 04-reading-and-curriculum]: [Phase 04-02]: ReadingListPage and ReadingPassagePage created as stubs — full content built in Plan 03
 
 ### Pending Todos
 
@@ -114,6 +118,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T16:10:24.147Z
-Stopped at: Completed 04-01-PLAN.md
+Last session: 2026-03-12T16:11:40.486Z
+Stopped at: Completed 04-02-PLAN.md (CurriculumMapPage and 5-tab navigation)
 Resume file: None
