@@ -33,7 +33,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **READ-01**: User can read graded Korean text passages matched to their level
 - [x] **READ-02**: Reading passages include vocabulary glossing for unknown words
-- [ ] **READ-03**: Reading passages support line-by-line audio playback
+- [x] **READ-03**: Reading passages support line-by-line audio playback
 
 ### Progression
 
@@ -105,7 +105,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | GRAM-03 | Phase 3 | Complete |
 | READ-01 | Phase 4 | Complete |
 | READ-02 | Phase 4 | Complete |
-| READ-03 | Phase 4 | Pending |
+| READ-03 | Phase 4 | Complete |
 | PROG-03 | Phase 4 | Complete |
 | PROG-04 | Phase 4 | Complete |
 

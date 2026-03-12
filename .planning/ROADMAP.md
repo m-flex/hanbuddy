@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Foundation** - Data schema, storage layer, engine, and project scaffolding (completed 2026-03-12)
 - [ ] **Phase 2: Lessons** - Audio service, lesson viewer, core grammar content, and progression structure
 - [x] **Phase 3: Practice** - SRS vocabulary drills, cloze exercises, listening, and sentence building (completed 2026-03-12)
-- [ ] **Phase 4: Reading and Curriculum** - Graded reading passages, progress persistence, and visual curriculum map
+- [x] **Phase 4: Reading and Curriculum** - Graded reading passages, progress persistence, and visual curriculum map (completed 2026-03-12)
 
 ## Phase Details
 
@@ -83,7 +83,7 @@ Plans:
   2. User can tap a line in a reading passage to hear it read aloud at their chosen speed
   3. User can view a visual curriculum map showing which lessons are complete, in progress, or locked across all levels
   4. Closing the browser and reopening the app restores the user's lesson completion state, SRS card states, and settings exactly as left — no progress is lost
-**Plans:** 2/3 plans executed
+**Plans:** 3/3 plans complete
 
 Plans:
 - [ ] 04-01-PLAN.md — Reading types, passage data, unlock utility, gloss hook, and progress store v2
@@ -100,4 +100,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Foundation | 2/2 | Complete   | 2026-03-12 |
 | 2. Lessons | 2/4 | In Progress|  |
 | 3. Practice | 5/5 | Complete   | 2026-03-12 |
-| 4. Reading and Curriculum | 2/3 | In Progress|  |
+| 4. Reading and Curriculum | 3/3 | Complete   | 2026-03-12 |

@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 04-02-PLAN.md (CurriculumMapPage and 5-tab navigation)
-last_updated: "2026-03-12T16:11:40.488Z"
+stopped_at: Completed 04-03-PLAN.md (ReadingListPage and ReadingPassagePage)
+last_updated: "2026-03-12T16:18:07.223Z"
 last_activity: 2026-03-12 — Roadmap created, phases derived from requirements
 progress:
   total_phases: 4
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 14
-  completed_plans: 13
+  completed_plans: 14
   percent: 0
 ---
 
@@ -63,6 +63,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 03-practice P04 | 3min | 2 tasks | 6 files |
 | Phase 04-reading-and-curriculum P01 | 3min | 2 tasks | 8 files |
 | Phase 04-reading-and-curriculum P02 | 4min | 2 tasks | 8 files |
+| Phase 04-reading-and-curriculum P03 | 3min | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -106,6 +107,8 @@ Recent decisions affecting current work:
 - [Phase 04-reading-and-curriculum]: CurriculumNode uses data-testid='node-{state}' for test-targeting — avoids brittle aria-label matching for icon state assertions
 - [Phase 04-reading-and-curriculum]: [Phase 04-02]: 5-tab layout uses text-[10px] labels and icon size 18 to prevent wrapping at 320px viewport
 - [Phase 04-reading-and-curriculum]: [Phase 04-02]: ReadingListPage and ReadingPassagePage created as stubs — full content built in Plan 03
+- [Phase 04-reading-and-curriculum]: activeGlossKey tracked as local useState in ReadingPassagePage rather than extracting internal state from useGlossToggle — keeps hook API clean
+- [Phase 04-reading-and-curriculum]: alignRight for GlossPopup determined by tokenIndex > tokens.length * 0.6 to prevent viewport overflow on right-side tokens
 
 ### Pending Todos
 
@@ -118,6 +121,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T16:11:40.486Z
-Stopped at: Completed 04-02-PLAN.md (CurriculumMapPage and 5-tab navigation)
+Last session: 2026-03-12T16:18:07.220Z
+Stopped at: Completed 04-03-PLAN.md (ReadingListPage and ReadingPassagePage)
 Resume file: None
