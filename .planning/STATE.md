@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 02-lessons-02-04-PLAN.md
-last_updated: "2026-03-12T13:43:41.246Z"
+stopped_at: Completed 02-lessons-02-03-PLAN.md
+last_updated: "2026-03-12T13:43:49.913Z"
 last_activity: 2026-03-12 — Roadmap created, phases derived from requirements
 progress:
   total_phases: 4
@@ -79,6 +79,9 @@ Recent decisions affecting current work:
 - [Phase 02-lessons]: .env.local gitignored; Hanguller TTS worker URL used as default to allow development without own worker deployment
 - [Phase 02-lessons-04]: (topics as string[]).includes() cast used — satisfies operator causes LESSONS/VOCAB topic arrays to infer as literal readonly tuples; casting to string[] enables .includes() with general topic IDs
 - [Phase 02-lessons-04]: Map icon added to lucideIcons registry — topics.ts Travel entry uses 'Map' but registry only had MapPin; auto-fixed during Task 1
+- [Phase 02-03]: ConjugationTable derives rows from grammar pattern string matching — keeps data files clean, handles all 4 particle patterns automatically
+- [Phase 02-03]: GrammarSection anchor uses grammarPoint.id directly (grm-NNN) for deep-link URL support per GRAM-04
+- [Phase 02-03]: LessonDetailPage calls setActiveLesson() matching actual store API — plan spec had setLastActiveLesson discrepancy
 
 ### Pending Todos
 
@@ -91,6 +94,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T13:43:29.839Z
-Stopped at: Completed 02-lessons-02-04-PLAN.md
+Last session: 2026-03-12T13:43:49.911Z
+Stopped at: Completed 02-lessons-02-03-PLAN.md
 Resume file: None

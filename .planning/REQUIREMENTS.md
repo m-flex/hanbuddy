@@ -17,10 +17,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Grammar
 
-- [ ] **GRAM-01**: User can study grammar lesson pages with pattern explanations, particles, and conjugation
+- [x] **GRAM-01**: User can study grammar lesson pages with pattern explanations, particles, and conjugation
 - [x] **GRAM-02**: Each grammar point includes 3-5 worked examples with audio
 - [ ] **GRAM-03**: User can practice sentence building with word-order drag-and-drop exercises
-- [ ] **GRAM-04**: Grammar points are cross-referenced and linkable across the app
+- [x] **GRAM-04**: Grammar points are cross-referenced and linkable across the app
 - [x] **GRAM-05**: Grammar lessons cover speech levels (formal/informal) from the start
 
 ### Listening
@@ -37,7 +37,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Progression
 
-- [ ] **PROG-01**: Lessons are organized in structured levels that unlock sequentially
+- [x] **PROG-01**: Lessons are organized in structured levels that unlock sequentially
 - [x] **PROG-02**: User can browse vocabulary and lessons by topic regardless of level
 - [ ] **PROG-03**: User can view a visual curriculum map showing completion state
 - [ ] **PROG-04**: User progress persists across sessions via localStorage
@@ -87,12 +87,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | FOUND-02 | Phase 1 | Complete |
 | FOUND-03 | Phase 1 | Complete |
 | FOUND-04 | Phase 1 | Complete |
-| GRAM-01 | Phase 2 | Pending |
+| GRAM-01 | Phase 2 | Complete |
 | GRAM-02 | Phase 2 | Complete |
-| GRAM-04 | Phase 2 | Pending |
+| GRAM-04 | Phase 2 | Complete |
 | GRAM-05 | Phase 2 | Complete |
 | LIST-01 | Phase 2 | Complete |
-| PROG-01 | Phase 2 | Pending |
+| PROG-01 | Phase 2 | Complete |
 | PROG-02 | Phase 2 | Complete |
 | PROG-05 | Phase 2 | Complete |
 | VOCAB-01 | Phase 3 | Pending |
