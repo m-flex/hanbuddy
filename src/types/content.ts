@@ -9,6 +9,9 @@ export type SpeechLevel = 'formal-high' | 'polite' | 'informal' | 'plain';
 /** The grammatical category of a word or grammar point. */
 export type ConjugationType = 'action' | 'descriptive' | 'noun' | 'particle' | 'expression';
 
+/** TOPIK proficiency level for a vocabulary item. */
+export type TopikLevel = 'beginner' | 'intermediate';
+
 /** A Korean example sentence with English translation and romanization. */
 export interface ExampleSentence {
   korean: string;
@@ -26,9 +29,11 @@ export interface VocabItem {
   romanization: string;
   speech_level: SpeechLevel;
   conjugation_type: ConjugationType;
+  /** TOPIK proficiency level */
+  topik_level: TopikLevel;
   /** Topic references — multi-tag system, e.g. ["top-001", "top-004"] */
   topics: `top-${number}`[];
-  examples?: ExampleSentence[];
+  examples: ExampleSentence[];
 }
 
 /** A grammar point explaining a Korean grammatical structure. */
@@ -70,4 +75,25 @@ export interface Topic {
   description: string;
   /** Optional Lucide icon name */
   icon?: string;
+}
+
+/** A single line in a Korean dialogue. */
+export interface DialogueLine {
+  speaker: string;
+  korean: string;
+  english: string;
+  romanization: string;
+}
+
+/** A dialogue lesson with 4-8 lines of conversation. */
+export interface Dialogue {
+  id: `dlg-${number}`;
+  title: string;
+  description: string;
+  /** Topic references */
+  topics: `top-${number}`[];
+  /** The dialogue lines in order */
+  lines: DialogueLine[];
+  /** Vocab IDs referenced in this dialogue */
+  vocab_ids: `voc-${number}`[];
 }
