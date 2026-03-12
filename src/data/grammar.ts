@@ -109,4 +109,112 @@ export const GRAMMAR = [
       },
     ],
   },
+  {
+    id: 'grm-005',
+    title: 'Polite Copula 이에요/예요',
+    explanation:
+      '이에요/예요 is the polite speech (해요체) form of the copula, meaning "is", "am", or "are". Use 이에요 after a noun ending in a consonant and 예요 after a noun ending in a vowel. It is used to equate the subject with a noun.',
+    speech_level: 'polite',
+    conjugation_type: 'expression',
+    pattern: 'N + 이에요/예요',
+    topics: ['top-004'],
+    examples: [
+      {
+        korean: '저는 학생이에요.',
+        english: 'I am a student.',
+        romanization: 'Jeoneun haksaengieyo.',
+      },
+      {
+        korean: '이것은 물이에요.',
+        english: 'This is water.',
+        romanization: 'Igeoseun murieyo.',
+      },
+      {
+        korean: '제 이름은 민지예요.',
+        english: 'My name is Minji.',
+        romanization: 'Je ireumeun minjiyeyo.',
+      },
+    ],
+  },
+  {
+    id: 'grm-006',
+    title: 'Formal Copula 입니다/입니까',
+    explanation:
+      '입니다 is the formal high speech (합쇼체) form of the copula, used in formal situations such as presentations, official settings, and when speaking to superiors. 입니까 is the question form. It attaches directly to nouns without change.',
+    speech_level: 'formal-high',
+    conjugation_type: 'expression',
+    pattern: 'N + 입니다',
+    topics: ['top-004'],
+    examples: [
+      {
+        korean: '저는 회사원입니다.',
+        english: 'I am an office worker.',
+        romanization: 'Jeoneun hoesawonimnida.',
+      },
+      {
+        korean: '이것은 제 명함입니다.',
+        english: 'This is my business card.',
+        romanization: 'Igeoseun je myeonghamimnida.',
+      },
+      {
+        korean: '성함이 어떻게 되십니까?',
+        english: 'What is your name (formal)?',
+        romanization: 'Seonghami eotteoke doesipnikka?',
+      },
+    ],
+  },
+  {
+    id: 'grm-007',
+    title: 'Sino-Korean Numbers 일, 이, 삼...',
+    explanation:
+      'Sino-Korean numbers (일, 이, 삼, 사, 오, 육, 칠, 팔, 구, 십) are borrowed from Chinese and are used for dates, phone numbers, money, addresses, and counting in multiples of ten and above. They pair with certain counters and measure words.',
+    speech_level: 'plain',
+    conjugation_type: 'noun',
+    pattern: 'Sino-Korean number + counter/unit',
+    topics: ['top-002'],
+    examples: [
+      {
+        korean: '오늘은 삼월 십이일이에요.',
+        english: 'Today is March 12th.',
+        romanization: 'Oneureun samwol sibiiriéyo.',
+      },
+      {
+        korean: '제 전화번호는 010-일이삼사-오육칠팔이에요.',
+        english: 'My phone number is 010-1234-5678.',
+        romanization: 'Je jeonhwabeonhoneun gongil-il-i-sam-sa-o-yuk-chil-palieyo.',
+      },
+      {
+        korean: '커피 한 잔에 오천 원이에요.',
+        english: 'One cup of coffee is 5,000 won.',
+        romanization: 'Keopi han jane ocheon woniéyo.',
+      },
+    ],
+  },
+  {
+    id: 'grm-008',
+    title: 'Native Korean Numbers 하나, 둘, 셋...',
+    explanation:
+      'Native Korean numbers (하나, 둘, 셋, 넷, 다섯, 여섯, 일곱, 여덟, 아홉, 열) are used for counting objects, people, and ages. They combine with specific counters such as 개 (things), 명 (people), and 잔 (cups/glasses). When used before a counter, 하나 becomes 한, 둘 becomes 두, 셋 becomes 세, and 넷 becomes 네.',
+    speech_level: 'plain',
+    conjugation_type: 'noun',
+    pattern: 'Native Korean number + counter',
+    topics: ['top-002'],
+    examples: [
+      {
+        korean: '사과 두 개 주세요.',
+        english: 'Please give me two apples.',
+        romanization: 'Sagwa du gae juseyo.',
+      },
+      {
+        korean: '친구 세 명이 왔어요.',
+        english: 'Three friends came.',
+        romanization: 'Chingu se myeongi wasseoyo.',
+      },
+      {
+        korean: '커피 한 잔 마실게요.',
+        english: 'I will drink one cup of coffee.',
+        romanization: 'Keopi han jan masilgeyo.',
+      },
+    ],
+  },
 ] satisfies GrammarPoint[];
