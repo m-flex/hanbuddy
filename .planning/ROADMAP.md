@@ -65,7 +65,14 @@ Plans:
   4. User can complete a listening exercise by hearing audio and selecting the correct Korean or English answer from multiple choices
   5. User can complete a sentence-building exercise by arranging word tiles into correct Korean word order
   6. Each vocabulary item shows its TOPIK-I level tag — user can see at a glance whether a word is TOPIK-I Beginner or Intermediate
-**Plans**: TBD
+**Plans:** 5 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Install ts-fsrs, extend content types (TOPIK level, dialogues), author missing vocab examples
+- [ ] 03-02-PLAN.md — SRS Zustand store with FSRS scheduling, practice navigation shell and routes
+- [ ] 03-03-PLAN.md — Flashcard review system (FlashCard, RatingButtons, FlashcardReviewPage)
+- [ ] 03-04-PLAN.md — Cloze and listening exercise pages with exercise utilities
+- [ ] 03-05-PLAN.md — Sentence building exercise and dialogue lesson viewer
 
 ### Phase 4: Reading and Curriculum
 **Goal**: Users can read graded Korean passages and see their full curriculum progress visualized across all levels
@@ -87,5 +94,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-03-12 |
 | 2. Lessons | 2/4 | In Progress|  |
-| 3. Practice | 0/TBD | Not started | - |
+| 3. Practice | 0/5 | Not started | - |
 | 4. Reading and Curriculum | 0/TBD | Not started | - |
