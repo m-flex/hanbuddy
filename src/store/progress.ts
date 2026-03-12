@@ -5,15 +5,18 @@ interface ProgressStoreState {
   completedLessons: string[];
   lastActiveLesson: string | null;
   _corruptionDetected: boolean;
+  completedReadings: string[];
   completeLesson: (lessonId: string) => void;
   setActiveLesson: (lessonId: string) => void;
   clearCorruptionFlag: () => void;
+  completeReading: (readingId: string) => void;
 }
 
 const initialState = {
   completedLessons: [] as string[],
   lastActiveLesson: null as string | null,
   _corruptionDetected: false,
+  completedReadings: [] as string[],
 };
 
 export const useProgressStore = create<ProgressStoreState>()(
@@ -29,14 +32,21 @@ export const useProgressStore = create<ProgressStoreState>()(
       setActiveLesson: (lessonId: string) =>
         set({ lastActiveLesson: lessonId }),
       clearCorruptionFlag: () => set({ _corruptionDetected: false }),
+      completeReading: (readingId: string) =>
+        set((state) => ({
+          completedReadings: state.completedReadings.includes(readingId)
+            ? state.completedReadings
+            : [...state.completedReadings, readingId],
+        })),
     }),
     {
       name: 'hanbuddy_progress',
-      version: 1,
+      version: 2,
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
         completedLessons: state.completedLessons,
         lastActiveLesson: state.lastActiveLesson,
+        completedReadings: state.completedReadings,
       }),
       migrate: (persistedState, storedVersion) => {
         if (storedVersion < 1) {
@@ -44,11 +54,18 @@ export const useProgressStore = create<ProgressStoreState>()(
           return {
             completedLessons: [],
             lastActiveLesson: null,
+            completedReadings: [],
+          };
+        }
+        if (storedVersion === 1) {
+          return {
+            ...(persistedState as { completedLessons: string[]; lastActiveLesson: string | null }),
+            completedReadings: [],
           };
         }
         return persistedState as Omit<
           ProgressStoreState,
-          '_corruptionDetected' | 'completeLesson' | 'setActiveLesson' | 'clearCorruptionFlag'
+          '_corruptionDetected' | 'completeLesson' | 'setActiveLesson' | 'clearCorruptionFlag' | 'completeReading'
         >;
       },
       onRehydrateStorage: () => (state, error) => {
@@ -59,12 +76,14 @@ export const useProgressStore = create<ProgressStoreState>()(
             state._corruptionDetected = true;
             state.completedLessons = [];
             state.lastActiveLesson = null;
+            state.completedReadings = [];
           } else {
             // state is undefined — set via the store directly after creation
             useProgressStore.setState({
               _corruptionDetected: true,
               completedLessons: [],
               lastActiveLesson: null,
+              completedReadings: [],
             });
           }
         }

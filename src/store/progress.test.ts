@@ -9,6 +9,7 @@ describe('useProgressStore', () => {
       completedLessons: [],
       lastActiveLesson: null,
       _corruptionDetected: false,
+      completedReadings: [],
     });
   });
 
@@ -63,12 +64,12 @@ describe('useProgressStore', () => {
       expect(parsed.state.completedLessons).toContain('les-001');
     });
 
-    it('stores version 1 in persisted data', () => {
+    it('stores version 2 in persisted data (legacy test — updated from v1)', () => {
       // After an action that triggers persist, check the stored version
       useProgressStore.getState().completeLesson('les-001');
       const storedAfter = localStorage.getItem('hanbuddy_progress');
       const parsed = JSON.parse(storedAfter!);
-      expect(parsed.version).toBe(1);
+      expect(parsed.version).toBe(2);
     });
 
     it('does not persist _corruptionDetected flag', () => {
@@ -106,6 +107,56 @@ describe('useProgressStore', () => {
       const state = useProgressStore.getState();
       expect(state._corruptionDetected).toBe(true);
       expect(Array.isArray(state.completedLessons)).toBe(true);
+    });
+  });
+
+  describe('completedReadings (v2)', () => {
+    it('initializes with empty completedReadings array', () => {
+      const state = useProgressStore.getState();
+      expect(state.completedReadings).toEqual([]);
+    });
+
+    it('completeReading adds reading ID to completedReadings', () => {
+      useProgressStore.getState().completeReading('rdg-001');
+      expect(useProgressStore.getState().completedReadings).toContain('rdg-001');
+    });
+
+    it('completeReading is idempotent — calling twice does not duplicate', () => {
+      useProgressStore.getState().completeReading('rdg-001');
+      useProgressStore.getState().completeReading('rdg-001');
+      const { completedReadings } = useProgressStore.getState();
+      expect(completedReadings.filter((id) => id === 'rdg-001')).toHaveLength(1);
+    });
+
+    it('partialize includes completedReadings in persisted state', () => {
+      useProgressStore.getState().completeReading('rdg-001');
+      const stored = localStorage.getItem('hanbuddy_progress');
+      expect(stored).not.toBeNull();
+      const parsed = JSON.parse(stored!);
+      expect(parsed.state.completedReadings).toContain('rdg-001');
+    });
+
+    it('stores version 2 in persisted data', () => {
+      useProgressStore.getState().completeReading('rdg-001');
+      const stored = localStorage.getItem('hanbuddy_progress');
+      const parsed = JSON.parse(stored!);
+      expect(parsed.version).toBe(2);
+    });
+
+    it('v1 to v2 migration populates completedReadings as empty array', () => {
+      localStorage.setItem(
+        'hanbuddy_progress',
+        JSON.stringify({
+          state: { completedLessons: ['les-001'], lastActiveLesson: null },
+          version: 1,
+        })
+      );
+      useProgressStore.persist.rehydrate();
+      const state = useProgressStore.getState();
+      expect(Array.isArray(state.completedReadings)).toBe(true);
+      expect(state.completedReadings).toEqual([]);
+      // Existing data preserved
+      expect(state.completedLessons).toContain('les-001');
     });
   });
 });
