@@ -29,7 +29,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. A simulated schema migration (version bump) runs on boot and correctly transforms old shape to new shape without data loss
   4. Korean particle selection via es-hangul produces correct 은/는 and 이/가 forms for both consonant-final and vowel-final nouns
   5. Romanization is rendered only when explicitly revealed — it does not appear in any default view
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Project scaffold, content type system, and sample data with build-time validation
+- [ ] 01-02-PLAN.md — Zustand stores with persist/migration, Korean engine utilities, and romanization hook
 
 ### Phase 2: Lessons
 **Goal**: Users can navigate structured lesson content with audio, covering core grammar, speech levels, and topic browsing
@@ -75,7 +79,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 0/2 | Planning complete | - |
 | 2. Lessons | 0/TBD | Not started | - |
 | 3. Practice | 0/TBD | Not started | - |
 | 4. Reading and Curriculum | 0/TBD | Not started | - |
