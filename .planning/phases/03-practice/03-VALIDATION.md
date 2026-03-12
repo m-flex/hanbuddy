@@ -45,7 +45,7 @@ created: 2026-03-12
 | 03-03-01 | 03 | 2 | VOCAB-03 | unit | `npx vitest run src/pages/ClozeExercisePage.test.tsx` | ❌ W0 | ⬜ pending |
 | 03-04-01 | 04 | 2 | LIST-02 | unit | `npx vitest run src/utils/exerciseUtils.test.ts` | ❌ W0 | ⬜ pending |
 | 03-05-01 | 05 | 2 | GRAM-03 | unit | `npx vitest run src/pages/SentenceBuildPage.test.tsx` | ❌ W0 | ⬜ pending |
-| 03-06-01 | 06 | 2 | LIST-03 | unit | `npx vitest run src/components/practice/DialogueLesson.test.tsx` | ❌ W0 | ⬜ pending |
+| 03-05-02 | 05 | 2 | LIST-03 | unit | `npx vitest run src/components/practice/DialoguePlayer.test.tsx` | ❌ W0 | ⬜ pending |
 
 *Status: ⬜ pending · ✅ green · ❌ red · ⚠️ flaky*
 
@@ -58,7 +58,7 @@ created: 2026-03-12
 - [ ] `src/components/practice/FlashCard.test.tsx` — stubs for VOCAB-01, VOCAB-04 (card render, TOPIK-I level tag)
 - [ ] `src/pages/ClozeExercisePage.test.tsx` — stubs for VOCAB-03 (cloze NFC normalization, trim, correct/incorrect)
 - [ ] `src/pages/SentenceBuildPage.test.tsx` — stubs for GRAM-03 (tile pool/placed state transitions)
-- [ ] `src/components/practice/DialogueLesson.test.tsx` — stubs for LIST-03 (dialogue lines render with AudioButton)
+- [ ] `src/components/practice/DialoguePlayer.test.tsx` — stubs for LIST-03 (dialogue lines render with AudioButton)
 - [ ] Install ts-fsrs: `npm install ts-fsrs`
 
 ---
