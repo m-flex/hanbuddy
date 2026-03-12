@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 2 context gathered
-last_updated: "2026-03-12T13:01:34.596Z"
+stopped_at: Completed 02-lessons-02-PLAN.md
+last_updated: "2026-03-12T13:32:28.217Z"
 last_activity: 2026-03-12 — Roadmap created, phases derived from requirements
 progress:
   total_phases: 4
   completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
+  total_plans: 6
+  completed_plans: 3
   percent: 0
 ---
 
@@ -52,6 +52,7 @@ Progress: [░░░░░░░░░░] 0%
 *Updated after each plan completion*
 | Phase 01-foundation P01 | 4 | 3 tasks | 19 files |
 | Phase 01-foundation P02 | 4 | 3 tasks | 7 files |
+| Phase 02-lessons P02 | 8 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -68,6 +69,8 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: partialize used on Zustand stores to exclude action functions and _corruptionDetected from localStorage serialization
 - [Phase 01-foundation]: Korean engine kept thin — typed JosaType union wrapper around es-hangul, no added logic
 - [Phase 01-foundation]: useRomanizationToggle uses string | null (not Set) — only one word revealed at a time per locked UX decision
+- [Phase 02-02]: Copula grammar points (grm-005/006) placed under top-004 (Daily Life) as copula usage is core daily speech structure
+- [Phase 02-02]: les-005 Ordering Food reuses grm-003 (object particle) rather than introducing new grammar to reinforce prior learning in real-world context
 
 ### Pending Todos
 
@@ -80,6 +83,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T13:01:34.594Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-lessons/02-CONTEXT.md
+Last session: 2026-03-12T13:32:28.214Z
+Stopped at: Completed 02-lessons-02-PLAN.md
+Resume file: None

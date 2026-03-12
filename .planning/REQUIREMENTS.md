@@ -18,10 +18,10 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Grammar
 
 - [ ] **GRAM-01**: User can study grammar lesson pages with pattern explanations, particles, and conjugation
-- [ ] **GRAM-02**: Each grammar point includes 3-5 worked examples with audio
+- [x] **GRAM-02**: Each grammar point includes 3-5 worked examples with audio
 - [ ] **GRAM-03**: User can practice sentence building with word-order drag-and-drop exercises
 - [ ] **GRAM-04**: Grammar points are cross-referenced and linkable across the app
-- [ ] **GRAM-05**: Grammar lessons cover speech levels (formal/informal) from the start
+- [x] **GRAM-05**: Grammar lessons cover speech levels (formal/informal) from the start
 
 ### Listening
 
@@ -88,9 +88,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | FOUND-03 | Phase 1 | Complete |
 | FOUND-04 | Phase 1 | Complete |
 | GRAM-01 | Phase 2 | Pending |
-| GRAM-02 | Phase 2 | Pending |
+| GRAM-02 | Phase 2 | Complete |
 | GRAM-04 | Phase 2 | Pending |
-| GRAM-05 | Phase 2 | Pending |
+| GRAM-05 | Phase 2 | Complete |
 | LIST-01 | Phase 2 | Pending |
 | PROG-01 | Phase 2 | Pending |
 | PROG-02 | Phase 2 | Pending |
