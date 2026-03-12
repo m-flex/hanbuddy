@@ -8,6 +8,11 @@ import LessonDetailPage from './pages/LessonDetailPage';
 import TopicListPage from './pages/TopicListPage';
 import TopicDetailPage from './pages/TopicDetailPage';
 import SettingsPage from './pages/SettingsPage';
+import PracticeDashboardPage from './pages/PracticeDashboardPage';
+import FlashcardReviewPage from './pages/FlashcardReviewPage';
+import ClozeExercisePage from './pages/ClozeExercisePage';
+import ListeningExercisePage from './pages/ListeningExercisePage';
+import SentenceBuildPage from './pages/SentenceBuildPage';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +24,11 @@ const router = createBrowserRouter([
       { path: 'topics', element: <TopicListPage /> },
       { path: 'topics/:topicId', element: <TopicDetailPage /> },
       { path: 'settings', element: <SettingsPage /> },
+      { path: 'practice', element: <PracticeDashboardPage /> },
+      { path: 'practice/review', element: <FlashcardReviewPage /> },
+      { path: 'practice/cloze', element: <ClozeExercisePage /> },
+      { path: 'practice/listening', element: <ListeningExercisePage /> },
+      { path: 'practice/build', element: <SentenceBuildPage /> },
     ],
   },
 ]);

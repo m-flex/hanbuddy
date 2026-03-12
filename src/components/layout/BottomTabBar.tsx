@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { BookOpen, LayoutGrid, Settings } from 'lucide-react';
+import { BookOpen, Dumbbell, LayoutGrid, Settings } from 'lucide-react';
 
 export default function BottomTabBar() {
   return (
@@ -15,6 +15,18 @@ export default function BottomTabBar() {
       >
         <BookOpen size={20} />
         <span>Lessons</span>
+      </NavLink>
+
+      <NavLink
+        to="/practice"
+        className={({ isActive }) =>
+          `flex-1 flex flex-col items-center justify-center py-2 gap-0.5 text-xs font-medium ${
+            isActive ? 'text-blue-600' : 'text-gray-500'
+          }`
+        }
+      >
+        <Dumbbell size={20} />
+        <span>Practice</span>
       </NavLink>
 
       <NavLink
