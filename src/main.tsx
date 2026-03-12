@@ -13,6 +13,7 @@ import FlashcardReviewPage from './pages/FlashcardReviewPage';
 import ClozeExercisePage from './pages/ClozeExercisePage';
 import ListeningExercisePage from './pages/ListeningExercisePage';
 import SentenceBuildPage from './pages/SentenceBuildPage';
+import DialogueLessonPage from './pages/DialogueLessonPage';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
       { path: 'practice/cloze', element: <ClozeExercisePage /> },
       { path: 'practice/listening', element: <ListeningExercisePage /> },
       { path: 'practice/build', element: <SentenceBuildPage /> },
+      { path: 'practice/dialogues', element: <DialogueLessonPage /> },
     ],
   },
 ]);

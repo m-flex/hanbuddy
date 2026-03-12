@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Mic, PenLine, Layers } from 'lucide-react';
+import { Mic, PenLine, Layers, MessageSquare } from 'lucide-react';
+import { DIALOGUES } from '../data/dialogues';
 import { useSrsSession } from '../hooks/useSrsSession';
 import { useProgressStore } from '../store/progress';
 import { useSrsStore } from '../store/srs';
@@ -152,6 +153,20 @@ export default function PracticeDashboardPage() {
             <p className="text-sm text-gray-500">Arrange Korean word tiles into the correct order</p>
           </div>
           <span className="text-sm text-gray-400 flex-shrink-0">{exerciseCount} words</span>
+        </Link>
+        {/* Dialogue Lessons */}
+        <Link
+          to="/practice/dialogues"
+          className="flex items-center gap-4 rounded-xl shadow-sm bg-white p-4 border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all"
+        >
+          <div className="p-2 bg-blue-100 rounded-lg flex-shrink-0">
+            <MessageSquare size={20} className="text-blue-600" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <h3 className="font-semibold text-gray-900">Dialogues</h3>
+            <p className="text-sm text-gray-500">Read and listen to Korean conversations</p>
+          </div>
+          <span className="text-sm text-gray-400 flex-shrink-0">{DIALOGUES.length} dialogues</span>
         </Link>
       </div>
 
