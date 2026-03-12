@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 02-lessons-02-PLAN.md
-last_updated: "2026-03-12T13:32:28.217Z"
+stopped_at: Completed 02-lessons-02-01-PLAN.md
+last_updated: "2026-03-12T13:35:32.452Z"
 last_activity: 2026-03-12 — Roadmap created, phases derived from requirements
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 6
-  completed_plans: 3
+  completed_plans: 4
   percent: 0
 ---
 
@@ -53,6 +53,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 01-foundation P01 | 4 | 3 tasks | 19 files |
 | Phase 01-foundation P02 | 4 | 3 tasks | 7 files |
 | Phase 02-lessons P02 | 8 | 2 tasks | 4 files |
+| Phase 02-lessons P01 | 15min | 3 tasks | 22 files |
 
 ## Accumulated Context
 
@@ -71,6 +72,9 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: useRomanizationToggle uses string | null (not Set) — only one word revealed at a time per locked UX decision
 - [Phase 02-02]: Copula grammar points (grm-005/006) placed under top-004 (Daily Life) as copula usage is core daily speech structure
 - [Phase 02-02]: les-005 Ordering Food reuses grm-003 (object particle) rather than introducing new grammar to reinforce prior learning in real-world context
+- [Phase 02-lessons]: Audio constructor mock pattern: use regular function (not arrow) for new Audio() mock in happy-dom tests
+- [Phase 02-lessons]: naverSpeed() exported as named pure helper to enable isolated unit testing without Audio/fetch mocks
+- [Phase 02-lessons]: .env.local gitignored; Hanguller TTS worker URL used as default to allow development without own worker deployment
 
 ### Pending Todos
 
@@ -83,6 +87,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T13:32:28.214Z
-Stopped at: Completed 02-lessons-02-PLAN.md
+Last session: 2026-03-12T13:35:32.449Z
+Stopped at: Completed 02-lessons-02-01-PLAN.md
 Resume file: None

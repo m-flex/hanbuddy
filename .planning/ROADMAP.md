@@ -46,7 +46,7 @@ Plans:
   4. Formal (합쇼체) and informal polite (해요체) speech levels are distinguished in lesson content from the start — no lesson presents a single form as "the Korean way"
   5. User can browse vocabulary and lessons by topic (greetings, numbers, food, etc.) regardless of which level they are on
   6. Completing a lesson unlocks the next lesson in sequence; locked lessons are visibly distinct from unlocked ones
-**Plans:** 4 plans
+**Plans:** 2/4 plans executed
 
 Plans:
 - [ ] 02-01-PLAN.md — Routing shell, audio utility, TTS worker, and shared UI components
@@ -86,6 +86,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-03-12 |
-| 2. Lessons | 0/4 | Not started | - |
+| 2. Lessons | 2/4 | In Progress|  |
 | 3. Practice | 0/TBD | Not started | - |
 | 4. Reading and Curriculum | 0/TBD | Not started | - |
