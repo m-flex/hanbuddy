@@ -45,7 +45,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Foundation
 
-- [ ] **FOUND-01**: Content data schema includes speech level, conjugation type, and stable IDs
+- [x] **FOUND-01**: Content data schema includes speech level, conjugation type, and stable IDs
 - [ ] **FOUND-02**: localStorage uses versioned schema with migration support
 - [ ] **FOUND-03**: Korean text processing via es-hangul (josa particles, decomposition)
 - [ ] **FOUND-04**: Romanization shown as opt-in reveal hint only, never primary display
@@ -83,7 +83,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01 | Phase 1 | Pending |
+| FOUND-01 | Phase 1 | Complete |
 | FOUND-02 | Phase 1 | Pending |
 | FOUND-03 | Phase 1 | Pending |
 | FOUND-04 | Phase 1 | Pending |
