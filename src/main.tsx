@@ -5,6 +5,7 @@ import './index.css';
 import RootLayout from './components/layout/RootLayout';
 import LessonListPage from './pages/LessonListPage';
 import TopicListPage from './pages/TopicListPage';
+import TopicDetailPage from './pages/TopicDetailPage';
 import SettingsPage from './pages/SettingsPage';
 
 const router = createBrowserRouter([
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
       { index: true, element: <LessonListPage /> },
       { path: 'lessons/:lessonId', element: <div className="px-4 py-4 text-gray-500">Lesson detail coming soon…</div> },
       { path: 'topics', element: <TopicListPage /> },
-      { path: 'topics/:topicId', element: <div className="px-4 py-4 text-gray-500">Topic detail coming soon…</div> },
+      { path: 'topics/:topicId', element: <TopicDetailPage /> },
       { path: 'settings', element: <SettingsPage /> },
     ],
   },
