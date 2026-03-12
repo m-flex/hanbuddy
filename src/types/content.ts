@@ -97,3 +97,32 @@ export interface Dialogue {
   /** Vocab IDs referenced in this dialogue */
   vocab_ids: `voc-${number}`[];
 }
+
+/** A single token in a reading passage line, optionally annotated with gloss. */
+export interface PassageToken {
+  text: string;
+  gloss?: {
+    english: string;
+    romanization: string;
+  };
+}
+
+/** A single line in a reading passage with full translation and token-level annotations. */
+export interface PassageLine {
+  korean: string;
+  english: string;
+  tokens: PassageToken[];
+}
+
+/** A graded reading passage composed of annotated lines. */
+export interface ReadingPassage {
+  /** Prefixed counter ID, e.g. "rdg-001" */
+  id: `rdg-${number}`;
+  title: string;
+  /** Level for unlock gating — matches Lesson.level */
+  level: number;
+  /** Topic references */
+  topics: `top-${number}`[];
+  /** The passage lines in order */
+  lines: PassageLine[];
+}
