@@ -12,7 +12,7 @@ Hanbuddy builds a Korean language learning app in four phases. The schema and en
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation** - Data schema, storage layer, engine, and project scaffolding
+- [x] **Phase 1: Foundation** - Data schema, storage layer, engine, and project scaffolding (completed 2026-03-12)
 - [ ] **Phase 2: Lessons** - Audio service, lesson viewer, core grammar content, and progression structure
 - [ ] **Phase 3: Practice** - SRS vocabulary drills, cloze exercises, listening, and sentence building
 - [ ] **Phase 4: Reading and Curriculum** - Graded reading passages, progress persistence, and visual curriculum map
@@ -29,7 +29,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. A simulated schema migration (version bump) runs on boot and correctly transforms old shape to new shape without data loss
   4. Korean particle selection via es-hangul produces correct 은/는 and 이/가 forms for both consonant-final and vowel-final nouns
   5. Romanization is rendered only when explicitly revealed — it does not appear in any default view
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 Plans:
 - [ ] 01-01-PLAN.md — Project scaffold, content type system, and sample data with build-time validation
@@ -79,7 +79,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 1/2 | In Progress|  |
+| 1. Foundation | 2/2 | Complete   | 2026-03-12 |
 | 2. Lessons | 0/TBD | Not started | - |
 | 3. Practice | 0/TBD | Not started | - |
 | 4. Reading and Curriculum | 0/TBD | Not started | - |

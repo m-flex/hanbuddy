@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 01-foundation-01-PLAN.md
-last_updated: "2026-03-12T12:32:33.153Z"
+stopped_at: Completed 01-foundation-02-PLAN.md
+last_updated: "2026-03-12T12:38:04.667Z"
 last_activity: 2026-03-12 — Roadmap created, phases derived from requirements
 progress:
   total_phases: 4
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 2
-  completed_plans: 1
+  completed_plans: 2
   percent: 0
 ---
 
@@ -51,6 +51,7 @@ Progress: [░░░░░░░░░░] 0%
 
 *Updated after each plan completion*
 | Phase 01-foundation P01 | 4 | 3 tasks | 19 files |
+| Phase 01-foundation P02 | 4 | 3 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -64,6 +65,9 @@ Recent decisions affecting current work:
 - Roadmap: SRS deferred to Phase 3 — FSRS needs real vocabulary cards to schedule; building before content is stable risks rework
 - [Phase 01-foundation]: Used happy-dom instead of jsdom for Vitest environment — jsdom 28 has ESM/CJS incompatibility with html-encoding-sniffer v6
 - [Phase 01-foundation]: satisfies operator used on all data arrays so TypeScript infers literal types while still enforcing shape at compile time
+- [Phase 01-foundation]: partialize used on Zustand stores to exclude action functions and _corruptionDetected from localStorage serialization
+- [Phase 01-foundation]: Korean engine kept thin — typed JosaType union wrapper around es-hangul, no added logic
+- [Phase 01-foundation]: useRomanizationToggle uses string | null (not Set) — only one word revealed at a time per locked UX decision
 
 ### Pending Todos
 
@@ -76,6 +80,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-12T12:32:33.150Z
-Stopped at: Completed 01-foundation-01-PLAN.md
+Last session: 2026-03-12T12:38:04.665Z
+Stopped at: Completed 01-foundation-02-PLAN.md
 Resume file: None
