@@ -83,37 +83,37 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| VOCAB-01 | — | Pending |
-| VOCAB-02 | — | Pending |
-| VOCAB-03 | — | Pending |
-| VOCAB-04 | — | Pending |
-| VOCAB-05 | — | Pending |
-| GRAM-01 | — | Pending |
-| GRAM-02 | — | Pending |
-| GRAM-03 | — | Pending |
-| GRAM-04 | — | Pending |
-| GRAM-05 | — | Pending |
-| LIST-01 | — | Pending |
-| LIST-02 | — | Pending |
-| LIST-03 | — | Pending |
-| READ-01 | — | Pending |
-| READ-02 | — | Pending |
-| READ-03 | — | Pending |
-| PROG-01 | — | Pending |
-| PROG-02 | — | Pending |
-| PROG-03 | — | Pending |
-| PROG-04 | — | Pending |
-| PROG-05 | — | Pending |
-| FOUND-01 | — | Pending |
-| FOUND-02 | — | Pending |
-| FOUND-03 | — | Pending |
-| FOUND-04 | — | Pending |
+| FOUND-01 | Phase 1 | Pending |
+| FOUND-02 | Phase 1 | Pending |
+| FOUND-03 | Phase 1 | Pending |
+| FOUND-04 | Phase 1 | Pending |
+| GRAM-01 | Phase 2 | Pending |
+| GRAM-02 | Phase 2 | Pending |
+| GRAM-04 | Phase 2 | Pending |
+| GRAM-05 | Phase 2 | Pending |
+| LIST-01 | Phase 2 | Pending |
+| PROG-01 | Phase 2 | Pending |
+| PROG-02 | Phase 2 | Pending |
+| PROG-05 | Phase 2 | Pending |
+| VOCAB-01 | Phase 3 | Pending |
+| VOCAB-02 | Phase 3 | Pending |
+| VOCAB-03 | Phase 3 | Pending |
+| VOCAB-04 | Phase 3 | Pending |
+| VOCAB-05 | Phase 3 | Pending |
+| LIST-02 | Phase 3 | Pending |
+| LIST-03 | Phase 3 | Pending |
+| GRAM-03 | Phase 3 | Pending |
+| READ-01 | Phase 4 | Pending |
+| READ-02 | Phase 4 | Pending |
+| READ-03 | Phase 4 | Pending |
+| PROG-03 | Phase 4 | Pending |
+| PROG-04 | Phase 4 | Pending |
 
 **Coverage:**
 - v1 requirements: 25 total
-- Mapped to phases: 0
-- Unmapped: 25 ⚠️
+- Mapped to phases: 25
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-12*
-*Last updated: 2026-03-12 after initial definition*
+*Last updated: 2026-03-12 after roadmap creation*
