@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import RootLayout from './components/layout/RootLayout';
 import LessonListPage from './pages/LessonListPage';
+import LessonDetailPage from './pages/LessonDetailPage';
 import TopicListPage from './pages/TopicListPage';
 import TopicDetailPage from './pages/TopicDetailPage';
 import SettingsPage from './pages/SettingsPage';
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       { index: true, element: <LessonListPage /> },
-      { path: 'lessons/:lessonId', element: <div className="px-4 py-4 text-gray-500">Lesson detail coming soon…</div> },
+      { path: 'lessons/:lessonId', element: <LessonDetailPage /> },
       { path: 'topics', element: <TopicListPage /> },
       { path: 'topics/:topicId', element: <TopicDetailPage /> },
       { path: 'settings', element: <SettingsPage /> },
