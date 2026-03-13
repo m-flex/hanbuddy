@@ -61,7 +61,7 @@ function BreakdownSlide({ slide }) {
       <h2 className="text-xl sm:text-2xl font-bold text-white mb-5">{slide.title}</h2>
       <div className="space-y-3">
         {slide.items.map((item, i) => {
-          const isWord = item.char.length > 2
+          const isWord = item.char.length > 1
           return (
             <motion.div
               key={i}
