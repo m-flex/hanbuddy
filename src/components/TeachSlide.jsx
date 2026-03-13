@@ -2,6 +2,23 @@ import { motion } from 'framer-motion'
 import { Volume2 } from 'lucide-react'
 import { speak } from '../utils/audio'
 
+// Map bare jamo to pronounceable syllables so TTS says the sound, not the letter name
+const jamoToSyllable = {
+  // Consonants → consonant + ㅏ
+  'ㄱ': '가', 'ㄴ': '나', 'ㄷ': '다', 'ㄹ': '라', 'ㅁ': '마',
+  'ㅂ': '바', 'ㅅ': '사', 'ㅇ': '아', 'ㅈ': '자',
+  'ㅊ': '차', 'ㅋ': '카', 'ㅌ': '타', 'ㅍ': '파', 'ㅎ': '하',
+  'ㄲ': '까', 'ㄸ': '따', 'ㅃ': '빠', 'ㅆ': '싸', 'ㅉ': '짜',
+  // Vowels → ㅇ + vowel
+  'ㅏ': '아', 'ㅓ': '어', 'ㅗ': '오', 'ㅜ': '우', 'ㅡ': '으', 'ㅣ': '이',
+  'ㅑ': '야', 'ㅕ': '여', 'ㅛ': '요', 'ㅠ': '유',
+  'ㅐ': '애', 'ㅔ': '에', 'ㅘ': '와', 'ㅝ': '워', 'ㅟ': '위', 'ㅢ': '의',
+}
+
+function speakKorean(text) {
+  speak(jamoToSyllable[text] || text)
+}
+
 export default function TeachSlide({ slide, index, direction }) {
   return (
     <motion.div
@@ -43,31 +60,35 @@ function BreakdownSlide({ slide }) {
     <div className="bg-slate-800/60 border border-slate-700/50 rounded-2xl p-6 sm:p-8">
       <h2 className="text-xl sm:text-2xl font-bold text-white mb-5">{slide.title}</h2>
       <div className="space-y-3">
-        {slide.items.map((item, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.08 }}
-            className="flex items-start gap-4 bg-slate-700/30 rounded-xl p-4 border border-slate-600/30"
-          >
-            <button
-              onClick={() => speak(item.char)}
-              className="flex-shrink-0 hangul text-3xl font-black text-white bg-slate-600/50
-                w-14 h-14 rounded-xl flex items-center justify-center cursor-pointer
-                border border-slate-500/30 hover:bg-primary-600/30 hover:border-primary-500/30 transition-colors"
+        {slide.items.map((item, i) => {
+          const isWord = item.char.length > 2
+          return (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.08 }}
+              className="flex items-start gap-4 bg-slate-700/30 rounded-xl p-4 border border-slate-600/30"
             >
-              {item.char}
-            </button>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-primary-400 font-semibold">{item.roman}</span>
-                <span className="text-slate-400 text-sm">— {item.sound}</span>
+              <button
+                onClick={() => speakKorean(item.char)}
+                className={`flex-shrink-0 hangul font-black text-white bg-slate-600/50
+                  rounded-xl flex items-center justify-center cursor-pointer
+                  border border-slate-500/30 hover:bg-primary-600/30 hover:border-primary-500/30 transition-colors
+                  ${isWord ? 'text-2xl px-3 py-2 min-w-14 h-auto' : 'text-3xl w-14 h-14'}`}
+              >
+                {item.char}
+              </button>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-primary-400 font-semibold">{item.roman}</span>
+                  <span className="text-slate-400 text-sm">— {item.sound}</span>
+                </div>
+                <p className="text-sm text-slate-400">{item.mnemonic}</p>
               </div>
-              <p className="text-sm text-slate-400">{item.mnemonic}</p>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          )
+        })}
       </div>
     </div>
   )
@@ -89,7 +110,7 @@ function ExampleSlide({ slide }) {
         <div className="space-y-2">
           {slide.breakdown.map((b, i) => (
             <div key={i} className="flex items-center gap-3 bg-slate-700/30 rounded-lg px-4 py-2">
-              <button onClick={() => speak(b.part)} className="hangul text-xl font-bold text-white cursor-pointer bg-transparent border-0 p-0 hover:text-primary-400 transition-colors">
+              <button onClick={() => speakKorean(b.part)} className="hangul text-xl font-bold text-white cursor-pointer bg-transparent border-0 p-0 hover:text-primary-400 transition-colors">
                 {b.part}
               </button>
               <span className="text-slate-400 text-sm">{b.role}</span>
